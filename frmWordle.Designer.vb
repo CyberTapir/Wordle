@@ -54,6 +54,34 @@ Partial Class frmWordle
         picLetter21 = New PictureBox()
         lblName = New Label()
         lblScore = New Label()
+        btnQ = New Button()
+        btnM = New Button()
+        btnN = New Button()
+        btnB = New Button()
+        btnV = New Button()
+        btnC = New Button()
+        btnX = New Button()
+        btnZ = New Button()
+        btnA = New Button()
+        btnS = New Button()
+        btnD = New Button()
+        btnF = New Button()
+        btnG = New Button()
+        btnH = New Button()
+        btnJ = New Button()
+        btnK = New Button()
+        btnL = New Button()
+        btnP = New Button()
+        btnO = New Button()
+        I = New Button()
+        btnU = New Button()
+        btnY = New Button()
+        btnT = New Button()
+        btnR = New Button()
+        btnE = New Button()
+        btnW = New Button()
+        btnBackspace = New Button()
+        btnEnter = New Button()
         CType(picLetter11, ComponentModel.ISupportInitialize).BeginInit()
         CType(picLetter12, ComponentModel.ISupportInitialize).BeginInit()
         CType(picLetter13, ComponentModel.ISupportInitialize).BeginInit()
@@ -88,7 +116,8 @@ Partial Class frmWordle
         ' 
         ' picLetter11
         ' 
-        picLetter11.Location = New Point(239, 38)
+        picLetter11.BorderStyle = BorderStyle.FixedSingle
+        picLetter11.Location = New Point(108, 28)
         picLetter11.Name = "picLetter11"
         picLetter11.Size = New Size(80, 80)
         picLetter11.TabIndex = 0
@@ -96,7 +125,8 @@ Partial Class frmWordle
         ' 
         ' picLetter12
         ' 
-        picLetter12.Location = New Point(325, 38)
+        picLetter12.BorderStyle = BorderStyle.FixedSingle
+        picLetter12.Location = New Point(194, 28)
         picLetter12.Name = "picLetter12"
         picLetter12.Size = New Size(80, 80)
         picLetter12.TabIndex = 1
@@ -104,7 +134,8 @@ Partial Class frmWordle
         ' 
         ' picLetter13
         ' 
-        picLetter13.Location = New Point(411, 38)
+        picLetter13.BorderStyle = BorderStyle.FixedSingle
+        picLetter13.Location = New Point(280, 28)
         picLetter13.Name = "picLetter13"
         picLetter13.Size = New Size(80, 80)
         picLetter13.TabIndex = 2
@@ -112,7 +143,8 @@ Partial Class frmWordle
         ' 
         ' picLetter14
         ' 
-        picLetter14.Location = New Point(497, 38)
+        picLetter14.BorderStyle = BorderStyle.FixedSingle
+        picLetter14.Location = New Point(366, 28)
         picLetter14.Name = "picLetter14"
         picLetter14.Size = New Size(80, 80)
         picLetter14.TabIndex = 3
@@ -120,7 +152,8 @@ Partial Class frmWordle
         ' 
         ' picLetter15
         ' 
-        picLetter15.Location = New Point(583, 38)
+        picLetter15.BorderStyle = BorderStyle.FixedSingle
+        picLetter15.Location = New Point(452, 28)
         picLetter15.Name = "picLetter15"
         picLetter15.Size = New Size(80, 80)
         picLetter15.TabIndex = 4
@@ -128,7 +161,8 @@ Partial Class frmWordle
         ' 
         ' picLetter55
         ' 
-        picLetter55.Location = New Point(583, 382)
+        picLetter55.BorderStyle = BorderStyle.FixedSingle
+        picLetter55.Location = New Point(452, 372)
         picLetter55.Name = "picLetter55"
         picLetter55.Size = New Size(80, 80)
         picLetter55.TabIndex = 9
@@ -136,7 +170,8 @@ Partial Class frmWordle
         ' 
         ' picLetter54
         ' 
-        picLetter54.Location = New Point(497, 382)
+        picLetter54.BorderStyle = BorderStyle.FixedSingle
+        picLetter54.Location = New Point(366, 372)
         picLetter54.Name = "picLetter54"
         picLetter54.Size = New Size(80, 80)
         picLetter54.TabIndex = 8
@@ -144,7 +179,8 @@ Partial Class frmWordle
         ' 
         ' picLetter53
         ' 
-        picLetter53.Location = New Point(411, 382)
+        picLetter53.BorderStyle = BorderStyle.FixedSingle
+        picLetter53.Location = New Point(280, 372)
         picLetter53.Name = "picLetter53"
         picLetter53.Size = New Size(80, 80)
         picLetter53.TabIndex = 7
@@ -152,7 +188,8 @@ Partial Class frmWordle
         ' 
         ' picLetter52
         ' 
-        picLetter52.Location = New Point(325, 382)
+        picLetter52.BorderStyle = BorderStyle.FixedSingle
+        picLetter52.Location = New Point(194, 372)
         picLetter52.Name = "picLetter52"
         picLetter52.Size = New Size(80, 80)
         picLetter52.TabIndex = 6
@@ -160,7 +197,8 @@ Partial Class frmWordle
         ' 
         ' picLetter51
         ' 
-        picLetter51.Location = New Point(239, 382)
+        picLetter51.BorderStyle = BorderStyle.FixedSingle
+        picLetter51.Location = New Point(108, 372)
         picLetter51.Name = "picLetter51"
         picLetter51.Size = New Size(80, 80)
         picLetter51.TabIndex = 5
@@ -168,7 +206,8 @@ Partial Class frmWordle
         ' 
         ' picLetter65
         ' 
-        picLetter65.Location = New Point(583, 468)
+        picLetter65.BorderStyle = BorderStyle.FixedSingle
+        picLetter65.Location = New Point(452, 458)
         picLetter65.Name = "picLetter65"
         picLetter65.Size = New Size(80, 80)
         picLetter65.TabIndex = 14
@@ -176,7 +215,8 @@ Partial Class frmWordle
         ' 
         ' picLetter64
         ' 
-        picLetter64.Location = New Point(497, 468)
+        picLetter64.BorderStyle = BorderStyle.FixedSingle
+        picLetter64.Location = New Point(366, 458)
         picLetter64.Name = "picLetter64"
         picLetter64.Size = New Size(80, 80)
         picLetter64.TabIndex = 13
@@ -184,7 +224,8 @@ Partial Class frmWordle
         ' 
         ' picLetter63
         ' 
-        picLetter63.Location = New Point(411, 468)
+        picLetter63.BorderStyle = BorderStyle.FixedSingle
+        picLetter63.Location = New Point(280, 458)
         picLetter63.Name = "picLetter63"
         picLetter63.Size = New Size(80, 80)
         picLetter63.TabIndex = 12
@@ -192,7 +233,8 @@ Partial Class frmWordle
         ' 
         ' picLetter62
         ' 
-        picLetter62.Location = New Point(325, 468)
+        picLetter62.BorderStyle = BorderStyle.FixedSingle
+        picLetter62.Location = New Point(194, 458)
         picLetter62.Name = "picLetter62"
         picLetter62.Size = New Size(80, 80)
         picLetter62.TabIndex = 11
@@ -200,7 +242,8 @@ Partial Class frmWordle
         ' 
         ' picLetter61
         ' 
-        picLetter61.Location = New Point(239, 468)
+        picLetter61.BorderStyle = BorderStyle.FixedSingle
+        picLetter61.Location = New Point(108, 458)
         picLetter61.Name = "picLetter61"
         picLetter61.Size = New Size(80, 80)
         picLetter61.TabIndex = 10
@@ -208,7 +251,8 @@ Partial Class frmWordle
         ' 
         ' picLetter45
         ' 
-        picLetter45.Location = New Point(583, 296)
+        picLetter45.BorderStyle = BorderStyle.FixedSingle
+        picLetter45.Location = New Point(452, 286)
         picLetter45.Name = "picLetter45"
         picLetter45.Size = New Size(80, 80)
         picLetter45.TabIndex = 19
@@ -216,7 +260,8 @@ Partial Class frmWordle
         ' 
         ' picLetter44
         ' 
-        picLetter44.Location = New Point(497, 296)
+        picLetter44.BorderStyle = BorderStyle.FixedSingle
+        picLetter44.Location = New Point(366, 286)
         picLetter44.Name = "picLetter44"
         picLetter44.Size = New Size(80, 80)
         picLetter44.TabIndex = 18
@@ -224,7 +269,8 @@ Partial Class frmWordle
         ' 
         ' picLetter43
         ' 
-        picLetter43.Location = New Point(411, 296)
+        picLetter43.BorderStyle = BorderStyle.FixedSingle
+        picLetter43.Location = New Point(280, 286)
         picLetter43.Name = "picLetter43"
         picLetter43.Size = New Size(80, 80)
         picLetter43.TabIndex = 17
@@ -232,7 +278,8 @@ Partial Class frmWordle
         ' 
         ' picLetter42
         ' 
-        picLetter42.Location = New Point(325, 296)
+        picLetter42.BorderStyle = BorderStyle.FixedSingle
+        picLetter42.Location = New Point(194, 286)
         picLetter42.Name = "picLetter42"
         picLetter42.Size = New Size(80, 80)
         picLetter42.TabIndex = 16
@@ -240,7 +287,8 @@ Partial Class frmWordle
         ' 
         ' picLetter41
         ' 
-        picLetter41.Location = New Point(239, 296)
+        picLetter41.BorderStyle = BorderStyle.FixedSingle
+        picLetter41.Location = New Point(108, 286)
         picLetter41.Name = "picLetter41"
         picLetter41.Size = New Size(80, 80)
         picLetter41.TabIndex = 15
@@ -248,7 +296,8 @@ Partial Class frmWordle
         ' 
         ' picLetter35
         ' 
-        picLetter35.Location = New Point(583, 210)
+        picLetter35.BorderStyle = BorderStyle.FixedSingle
+        picLetter35.Location = New Point(452, 200)
         picLetter35.Name = "picLetter35"
         picLetter35.Size = New Size(80, 80)
         picLetter35.TabIndex = 24
@@ -256,7 +305,8 @@ Partial Class frmWordle
         ' 
         ' picLetter34
         ' 
-        picLetter34.Location = New Point(497, 210)
+        picLetter34.BorderStyle = BorderStyle.FixedSingle
+        picLetter34.Location = New Point(366, 200)
         picLetter34.Name = "picLetter34"
         picLetter34.Size = New Size(80, 80)
         picLetter34.TabIndex = 23
@@ -264,7 +314,8 @@ Partial Class frmWordle
         ' 
         ' picLetter33
         ' 
-        picLetter33.Location = New Point(411, 210)
+        picLetter33.BorderStyle = BorderStyle.FixedSingle
+        picLetter33.Location = New Point(280, 200)
         picLetter33.Name = "picLetter33"
         picLetter33.Size = New Size(80, 80)
         picLetter33.TabIndex = 22
@@ -272,7 +323,8 @@ Partial Class frmWordle
         ' 
         ' picLetter32
         ' 
-        picLetter32.Location = New Point(325, 210)
+        picLetter32.BorderStyle = BorderStyle.FixedSingle
+        picLetter32.Location = New Point(194, 200)
         picLetter32.Name = "picLetter32"
         picLetter32.Size = New Size(80, 80)
         picLetter32.TabIndex = 21
@@ -280,7 +332,8 @@ Partial Class frmWordle
         ' 
         ' picLetter31
         ' 
-        picLetter31.Location = New Point(239, 210)
+        picLetter31.BorderStyle = BorderStyle.FixedSingle
+        picLetter31.Location = New Point(108, 200)
         picLetter31.Name = "picLetter31"
         picLetter31.Size = New Size(80, 80)
         picLetter31.TabIndex = 20
@@ -288,7 +341,8 @@ Partial Class frmWordle
         ' 
         ' picLetter25
         ' 
-        picLetter25.Location = New Point(583, 124)
+        picLetter25.BorderStyle = BorderStyle.FixedSingle
+        picLetter25.Location = New Point(452, 114)
         picLetter25.Name = "picLetter25"
         picLetter25.Size = New Size(80, 80)
         picLetter25.TabIndex = 29
@@ -296,7 +350,8 @@ Partial Class frmWordle
         ' 
         ' picLetter24
         ' 
-        picLetter24.Location = New Point(497, 124)
+        picLetter24.BorderStyle = BorderStyle.FixedSingle
+        picLetter24.Location = New Point(366, 114)
         picLetter24.Name = "picLetter24"
         picLetter24.Size = New Size(80, 80)
         picLetter24.TabIndex = 28
@@ -304,7 +359,8 @@ Partial Class frmWordle
         ' 
         ' picLetter23
         ' 
-        picLetter23.Location = New Point(411, 124)
+        picLetter23.BorderStyle = BorderStyle.FixedSingle
+        picLetter23.Location = New Point(280, 114)
         picLetter23.Name = "picLetter23"
         picLetter23.Size = New Size(80, 80)
         picLetter23.TabIndex = 27
@@ -312,7 +368,8 @@ Partial Class frmWordle
         ' 
         ' picLetter22
         ' 
-        picLetter22.Location = New Point(325, 124)
+        picLetter22.BorderStyle = BorderStyle.FixedSingle
+        picLetter22.Location = New Point(194, 114)
         picLetter22.Name = "picLetter22"
         picLetter22.Size = New Size(80, 80)
         picLetter22.TabIndex = 26
@@ -320,7 +377,8 @@ Partial Class frmWordle
         ' 
         ' picLetter21
         ' 
-        picLetter21.Location = New Point(239, 124)
+        picLetter21.BorderStyle = BorderStyle.FixedSingle
+        picLetter21.Location = New Point(108, 114)
         picLetter21.Name = "picLetter21"
         picLetter21.Size = New Size(80, 80)
         picLetter21.TabIndex = 25
@@ -329,7 +387,7 @@ Partial Class frmWordle
         ' lblName
         ' 
         lblName.AutoSize = True
-        lblName.Location = New Point(71, 92)
+        lblName.Location = New Point(12, 93)
         lblName.Name = "lblName"
         lblName.Size = New Size(41, 15)
         lblName.TabIndex = 30
@@ -337,16 +395,296 @@ Partial Class frmWordle
         ' lblScore
         ' 
         lblScore.AutoSize = True
-        lblScore.Location = New Point(71, 107)
+        lblScore.Location = New Point(576, 93)
         lblScore.Name = "lblScore"
         lblScore.Size = New Size(41, 15)
         lblScore.TabIndex = 31
         lblScore.Text = "Label1"' 
+        ' btnQ
+        ' 
+        btnQ.Location = New Point(126, 574)
+        btnQ.Name = "btnQ"
+        btnQ.Size = New Size(34, 23)
+        btnQ.TabIndex = 32
+        btnQ.Text = "Q"
+        btnQ.UseVisualStyleBackColor = True
+        ' 
+        ' btnM
+        ' 
+        btnM.Location = New Point(425, 632)
+        btnM.Name = "btnM"
+        btnM.Size = New Size(34, 23)
+        btnM.TabIndex = 33
+        btnM.Text = "M"
+        btnM.UseVisualStyleBackColor = True
+        ' 
+        ' btnN
+        ' 
+        btnN.Location = New Point(385, 632)
+        btnN.Name = "btnN"
+        btnN.Size = New Size(34, 23)
+        btnN.TabIndex = 34
+        btnN.Text = "N"
+        btnN.UseVisualStyleBackColor = True
+        ' 
+        ' btnB
+        ' 
+        btnB.Location = New Point(345, 632)
+        btnB.Name = "btnB"
+        btnB.Size = New Size(34, 23)
+        btnB.TabIndex = 35
+        btnB.Text = "B"
+        btnB.UseVisualStyleBackColor = True
+        ' 
+        ' btnV
+        ' 
+        btnV.Location = New Point(305, 632)
+        btnV.Name = "btnV"
+        btnV.Size = New Size(34, 23)
+        btnV.TabIndex = 36
+        btnV.Text = "V"
+        btnV.UseVisualStyleBackColor = True
+        ' 
+        ' btnC
+        ' 
+        btnC.Location = New Point(265, 632)
+        btnC.Name = "btnC"
+        btnC.Size = New Size(34, 23)
+        btnC.TabIndex = 37
+        btnC.Text = "C"
+        btnC.UseVisualStyleBackColor = True
+        ' 
+        ' btnX
+        ' 
+        btnX.Location = New Point(225, 632)
+        btnX.Name = "btnX"
+        btnX.Size = New Size(34, 23)
+        btnX.TabIndex = 38
+        btnX.Text = "X"
+        btnX.UseVisualStyleBackColor = True
+        ' 
+        ' btnZ
+        ' 
+        btnZ.Location = New Point(185, 632)
+        btnZ.Name = "btnZ"
+        btnZ.Size = New Size(34, 23)
+        btnZ.TabIndex = 39
+        btnZ.Text = "Z"
+        btnZ.UseVisualStyleBackColor = True
+        ' 
+        ' btnA
+        ' 
+        btnA.Location = New Point(145, 603)
+        btnA.Name = "btnA"
+        btnA.Size = New Size(34, 23)
+        btnA.TabIndex = 40
+        btnA.Text = "A"
+        btnA.UseVisualStyleBackColor = True
+        ' 
+        ' btnS
+        ' 
+        btnS.Location = New Point(185, 603)
+        btnS.Name = "btnS"
+        btnS.Size = New Size(34, 23)
+        btnS.TabIndex = 41
+        btnS.Text = "S"
+        btnS.UseVisualStyleBackColor = True
+        ' 
+        ' btnD
+        ' 
+        btnD.Location = New Point(225, 603)
+        btnD.Name = "btnD"
+        btnD.Size = New Size(34, 23)
+        btnD.TabIndex = 42
+        btnD.Text = "D"
+        btnD.UseVisualStyleBackColor = True
+        ' 
+        ' btnF
+        ' 
+        btnF.Location = New Point(265, 603)
+        btnF.Name = "btnF"
+        btnF.Size = New Size(34, 23)
+        btnF.TabIndex = 43
+        btnF.Text = "F"
+        btnF.UseVisualStyleBackColor = True
+        ' 
+        ' btnG
+        ' 
+        btnG.Location = New Point(305, 603)
+        btnG.Name = "btnG"
+        btnG.Size = New Size(34, 23)
+        btnG.TabIndex = 44
+        btnG.Text = "G"
+        btnG.UseVisualStyleBackColor = True
+        ' 
+        ' btnH
+        ' 
+        btnH.Location = New Point(345, 603)
+        btnH.Name = "btnH"
+        btnH.Size = New Size(34, 23)
+        btnH.TabIndex = 45
+        btnH.Text = "H"
+        btnH.UseVisualStyleBackColor = True
+        ' 
+        ' btnJ
+        ' 
+        btnJ.Location = New Point(385, 603)
+        btnJ.Name = "btnJ"
+        btnJ.Size = New Size(34, 23)
+        btnJ.TabIndex = 46
+        btnJ.Text = "J"
+        btnJ.UseVisualStyleBackColor = True
+        ' 
+        ' btnK
+        ' 
+        btnK.Location = New Point(425, 603)
+        btnK.Name = "btnK"
+        btnK.Size = New Size(34, 23)
+        btnK.TabIndex = 47
+        btnK.Text = "K"
+        btnK.UseVisualStyleBackColor = True
+        ' 
+        ' btnL
+        ' 
+        btnL.Location = New Point(465, 603)
+        btnL.Name = "btnL"
+        btnL.Size = New Size(34, 23)
+        btnL.TabIndex = 48
+        btnL.Text = "L"
+        btnL.UseVisualStyleBackColor = True
+        ' 
+        ' btnP
+        ' 
+        btnP.Location = New Point(484, 574)
+        btnP.Name = "btnP"
+        btnP.Size = New Size(34, 23)
+        btnP.TabIndex = 49
+        btnP.Text = "P"
+        btnP.UseVisualStyleBackColor = True
+        ' 
+        ' btnO
+        ' 
+        btnO.Location = New Point(444, 574)
+        btnO.Name = "btnO"
+        btnO.Size = New Size(34, 23)
+        btnO.TabIndex = 50
+        btnO.Text = "O"
+        btnO.UseVisualStyleBackColor = True
+        ' 
+        ' I
+        ' 
+        I.Location = New Point(406, 574)
+        I.Name = "I"
+        I.Size = New Size(34, 23)
+        I.TabIndex = 51
+        I.Text = "I"
+        I.UseVisualStyleBackColor = True
+        ' 
+        ' btnU
+        ' 
+        btnU.Location = New Point(366, 574)
+        btnU.Name = "btnU"
+        btnU.Size = New Size(34, 23)
+        btnU.TabIndex = 52
+        btnU.Text = "U"
+        btnU.UseVisualStyleBackColor = True
+        ' 
+        ' btnY
+        ' 
+        btnY.Location = New Point(326, 574)
+        btnY.Name = "btnY"
+        btnY.Size = New Size(34, 23)
+        btnY.TabIndex = 53
+        btnY.Text = "Y"
+        btnY.UseVisualStyleBackColor = True
+        ' 
+        ' btnT
+        ' 
+        btnT.Location = New Point(286, 574)
+        btnT.Name = "btnT"
+        btnT.Size = New Size(34, 23)
+        btnT.TabIndex = 54
+        btnT.Text = "T"
+        btnT.UseVisualStyleBackColor = True
+        ' 
+        ' btnR
+        ' 
+        btnR.Location = New Point(246, 574)
+        btnR.Name = "btnR"
+        btnR.Size = New Size(34, 23)
+        btnR.TabIndex = 55
+        btnR.Text = "R"
+        btnR.UseVisualStyleBackColor = True
+        ' 
+        ' btnE
+        ' 
+        btnE.Location = New Point(206, 574)
+        btnE.Name = "btnE"
+        btnE.Size = New Size(34, 23)
+        btnE.TabIndex = 56
+        btnE.Text = "E"
+        btnE.UseVisualStyleBackColor = True
+        ' 
+        ' btnW
+        ' 
+        btnW.Location = New Point(166, 574)
+        btnW.Name = "btnW"
+        btnW.Size = New Size(34, 23)
+        btnW.TabIndex = 57
+        btnW.Text = "W"
+        btnW.UseVisualStyleBackColor = True
+        ' 
+        ' btnBackspace
+        ' 
+        btnBackspace.Location = New Point(104, 632)
+        btnBackspace.Name = "btnBackspace"
+        btnBackspace.Size = New Size(75, 23)
+        btnBackspace.TabIndex = 58
+        btnBackspace.Text = "Backspace"
+        btnBackspace.UseVisualStyleBackColor = True
+        ' 
+        ' btnEnter
+        ' 
+        btnEnter.Location = New Point(465, 632)
+        btnEnter.Name = "btnEnter"
+        btnEnter.Size = New Size(75, 23)
+        btnEnter.TabIndex = 59
+        btnEnter.Text = "Enter"
+        btnEnter.UseVisualStyleBackColor = True
+        ' 
         ' frmWordle
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(949, 825)
+        ClientSize = New Size(668, 693)
+        Controls.Add(btnEnter)
+        Controls.Add(btnBackspace)
+        Controls.Add(btnW)
+        Controls.Add(btnE)
+        Controls.Add(btnR)
+        Controls.Add(btnT)
+        Controls.Add(btnY)
+        Controls.Add(btnU)
+        Controls.Add(I)
+        Controls.Add(btnO)
+        Controls.Add(btnP)
+        Controls.Add(btnL)
+        Controls.Add(btnK)
+        Controls.Add(btnJ)
+        Controls.Add(btnH)
+        Controls.Add(btnG)
+        Controls.Add(btnF)
+        Controls.Add(btnD)
+        Controls.Add(btnS)
+        Controls.Add(btnA)
+        Controls.Add(btnZ)
+        Controls.Add(btnX)
+        Controls.Add(btnC)
+        Controls.Add(btnV)
+        Controls.Add(btnB)
+        Controls.Add(btnN)
+        Controls.Add(btnM)
+        Controls.Add(btnQ)
         Controls.Add(lblScore)
         Controls.Add(lblName)
         Controls.Add(picLetter25)
@@ -447,4 +785,32 @@ Partial Class frmWordle
     Friend WithEvents picLetter21 As PictureBox
     Friend WithEvents lblName As Label
     Friend WithEvents lblScore As Label
+    Friend WithEvents btnQ As Button
+    Friend WithEvents btnM As Button
+    Friend WithEvents btnN As Button
+    Friend WithEvents btnB As Button
+    Friend WithEvents btnV As Button
+    Friend WithEvents btnC As Button
+    Friend WithEvents btnX As Button
+    Friend WithEvents btnZ As Button
+    Friend WithEvents btnA As Button
+    Friend WithEvents btnS As Button
+    Friend WithEvents btnD As Button
+    Friend WithEvents btnF As Button
+    Friend WithEvents btnG As Button
+    Friend WithEvents btnH As Button
+    Friend WithEvents btnJ As Button
+    Friend WithEvents btnK As Button
+    Friend WithEvents btnL As Button
+    Friend WithEvents btnP As Button
+    Friend WithEvents btnO As Button
+    Friend WithEvents I As Button
+    Friend WithEvents btnU As Button
+    Friend WithEvents btnY As Button
+    Friend WithEvents btnT As Button
+    Friend WithEvents btnR As Button
+    Friend WithEvents btnE As Button
+    Friend WithEvents btnW As Button
+    Friend WithEvents btnBackspace As Button
+    Friend WithEvents btnEnter As Button
 End Class

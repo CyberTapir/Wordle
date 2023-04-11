@@ -1,3 +1,3 @@
 ﻿Module modGlobal
-    Public name As String
+    Public playerName As String
 End Module

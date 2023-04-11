@@ -389,17 +389,17 @@ Partial Class frmWordle
         lblName.AutoSize = True
         lblName.Location = New Point(12, 93)
         lblName.Name = "lblName"
-        lblName.Size = New Size(41, 15)
+        lblName.Size = New Size(39, 15)
         lblName.TabIndex = 30
-        lblName.Text = "Label1"' 
+        lblName.Text = "Player"' 
         ' lblScore
         ' 
         lblScore.AutoSize = True
         lblScore.Location = New Point(576, 93)
         lblScore.Name = "lblScore"
-        lblScore.Size = New Size(41, 15)
+        lblScore.Size = New Size(36, 15)
         lblScore.TabIndex = 31
-        lblScore.Text = "Label1"' 
+        lblScore.Text = "Score"' 
         ' btnQ
         ' 
         btnQ.Location = New Point(126, 574)

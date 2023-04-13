@@ -22,6 +22,7 @@ Partial Class frmWordle
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(frmWordle))
         picLetter11 = New PictureBox()
         picLetter12 = New PictureBox()
         picLetter13 = New PictureBox()
@@ -73,7 +74,7 @@ Partial Class frmWordle
         btnL = New Button()
         btnP = New Button()
         btnO = New Button()
-        I = New Button()
+        btnI = New Button()
         btnU = New Button()
         btnY = New Button()
         btnT = New Button()
@@ -571,14 +572,14 @@ Partial Class frmWordle
         btnO.Text = "O"
         btnO.UseVisualStyleBackColor = True
         ' 
-        ' I
+        ' btnI
         ' 
-        I.Location = New Point(406, 574)
-        I.Name = "I"
-        I.Size = New Size(34, 23)
-        I.TabIndex = 51
-        I.Text = "I"
-        I.UseVisualStyleBackColor = True
+        btnI.Location = New Point(406, 574)
+        btnI.Name = "btnI"
+        btnI.Size = New Size(34, 23)
+        btnI.TabIndex = 51
+        btnI.Text = "I"
+        btnI.UseVisualStyleBackColor = True
         ' 
         ' btnU
         ' 
@@ -665,7 +666,7 @@ Partial Class frmWordle
         Controls.Add(btnT)
         Controls.Add(btnY)
         Controls.Add(btnU)
-        Controls.Add(I)
+        Controls.Add(btnI)
         Controls.Add(btnO)
         Controls.Add(btnP)
         Controls.Add(btnL)
@@ -717,6 +718,7 @@ Partial Class frmWordle
         Controls.Add(picLetter13)
         Controls.Add(picLetter12)
         Controls.Add(picLetter11)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "frmWordle"
         Text = "Wordle"
         CType(picLetter11, ComponentModel.ISupportInitialize).EndInit()
@@ -804,7 +806,7 @@ Partial Class frmWordle
     Friend WithEvents btnL As Button
     Friend WithEvents btnP As Button
     Friend WithEvents btnO As Button
-    Friend WithEvents I As Button
+    Friend WithEvents btnI As Button
     Friend WithEvents btnU As Button
     Friend WithEvents btnY As Button
     Friend WithEvents btnT As Button

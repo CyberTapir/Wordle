@@ -45,7 +45,8 @@ Partial Class frmStartWordle
         txtNameInput.Name = "txtNameInput"
         txtNameInput.Size = New Size(100, 23)
         txtNameInput.TabIndex = 0
-        txtNameInput.Text = "Name"' 
+        txtNameInput.Text = "Name"
+        ' 
         ' btnStartGame
         ' 
         btnStartGame.Location = New Point(272, 183)
@@ -69,7 +70,7 @@ Partial Class frmStartWordle
         ' picStartWordleL
         ' 
         picStartWordleL.BorderStyle = BorderStyle.FixedSingle
-        picStartWordleL.Image = My.Resources.Resources.l
+        picStartWordleL.Image = CType(resources.GetObject("picStartWordleL.Image"), Image)
         picStartWordleL.Location = New Point(396, 32)
         picStartWordleL.Name = "picStartWordleL"
         picStartWordleL.Size = New Size(80, 80)
@@ -102,7 +103,7 @@ Partial Class frmStartWordle
         ' frmStartWordleO
         ' 
         frmStartWordleO.BorderStyle = BorderStyle.FixedSingle
-        frmStartWordleO.Image = My.Resources.Resources.o
+        frmStartWordleO.Image = CType(resources.GetObject("frmStartWordleO.Image"), Image)
         frmStartWordleO.Location = New Point(138, 32)
         frmStartWordleO.Name = "frmStartWordleO"
         frmStartWordleO.Size = New Size(80, 80)

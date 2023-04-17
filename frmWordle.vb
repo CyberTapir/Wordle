@@ -1,10 +1,11 @@
-﻿Public Class frmWordle
-    Dim word As String = "basic"
+﻿Imports System.Linq
+Public Class frmWordle
+    Dim word As String = "BASIC"
     Dim playerScore As Integer
     Dim playerGuess(5) As String
     Dim btnArray(26) As Button
     Dim guessNum As Integer = 1
-    Dim guessStringNum As Integer = 1
+    Dim guessStringNum As Integer
     Private Sub frmWordle_Load(sender As Object, e As EventArgs)
         playerScore = 0
         lblName.Text = "Name: " & playerName
@@ -39,25 +40,72 @@
         btnArray(25) = btnY
         btnArray(26) = btnZ
     End Sub
-    Private Sub lblScore_Click(sender As Object, e As EventArgs)
+    Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
+        Dim sendingLetter As String = ""
+        For i = 0 To 4
+            Select Case playerGuess(i)
+                Case "A" : sendingLetter = "btnA"
+                Case "B" : sendingLetter = "btnB"
+                Case "C" : sendingLetter = "btnC"
+                Case "D" : sendingLetter = "btnD"
+                Case "E" : sendingLetter = "btnE"
+                Case "F" : sendingLetter = "btnF"
+                Case "G" : sendingLetter = "btnG"
+                Case "H" : sendingLetter = "btnH"
+                Case "I" : sendingLetter = "btnI"
+                Case "J" : sendingLetter = "btnJ"
+                Case "K" : sendingLetter = "btnK"
+                Case "L" : sendingLetter = "btnL"
+                Case "M" : sendingLetter = "btnM"
+                Case "N" : sendingLetter = "btnN"
+                Case "O" : sendingLetter = "btnO"
+                Case "P" : sendingLetter = "btnP"
+                Case "Q" : sendingLetter = "btnQ"
+                Case "R" : sendingLetter = "btnR"
+                Case "S" : sendingLetter = "btnS"
+                Case "T" : sendingLetter = "btnT"
+                Case "U" : sendingLetter = "btnU"
+                Case "V" : sendingLetter = "btnV"
+                Case "W" : sendingLetter = "btnW"
+                Case "X" : sendingLetter = "btnX"
+                Case "Y" : sendingLetter = "btnY"
+                Case "Z" : sendingLetter = "btnZ"
+            End Select
+            If playerGuess(i) = word(i) Then
+
+                updateDisplay(guessNum, i, sendingLetter, 3)
+            ElseIf playerGuess(i) <> word(i) Then
+                If playerGuess(i) = word(0) And i <> 0 Then
+                    updateDisplay(guessNum, i, sendingLetter, 2)
+                ElseIf playerGuess(i) = word(1) And i <> 1 Then
+                    updateDisplay(guessNum, i, sendingLetter, 2)
+                ElseIf playerGuess(i) = word(2) And i <> 2 Then
+                    updateDisplay(guessNum, i, sendingLetter, 2)
+                ElseIf playerGuess(i) = word(3) And i <> 3 Then
+                    updateDisplay(guessNum, i, sendingLetter, 2)
+                ElseIf playerGuess(i) = word(4) And i <> 4 Then
+                    updateDisplay(guessNum, i, sendingLetter, 2)
+                Else
+                    updateDisplay(guessNum, i, sendingLetter, 1)
+                End If
+            End If
+            playerGuess(i) = ""
+        Next i
         guessNum = guessNum + 1
-        guessStringNum = 1
+        guessStringNum = 0
     End Sub
     Private Sub btnQ_Click(sender As Object, e As EventArgs) Handles btnA.Click, btnB.Click, btnC.Click, btnD.Click, btnE.Click, btnF.Click, btnG.Click, btnH.Click, btnI.Click, btnJ.Click, btnK.Click, btnL.Click, btnM.Click, btnN.Click, btnO.Click, btnP.Click, btnQ.Click, btnR.Click, btnS.Click, btnT.Click, btnU.Click, btnV.Click, btnW.Click, btnX.Click, btnY.Click, btnZ.Click
         Dim controlName As String
         Dim controlName1 As String
         controlName = sender.name
-        MsgBox(sender.name(3))
         controlName1 = sender.name(3)
         If guessStringNum < 6 Then
             updateDisplay(guessNum, guessStringNum, controlName, 0)
             playerGuess(guessStringNum) = controlName1
             guessStringNum = guessStringNum + 1
-            MsgBox(playerGuess(1) & playerGuess(2) & playerGuess(3) & playerGuess(4) & playerGuess(5))
         End If
     End Sub
     Private Sub updateDisplay(playerGuessNum As Integer, character As Integer, letter As String, colour As Integer)
-        MsgBox("Update display to " & playerGuessNum & " " & character & " " & letter & " " & colour)
         Dim temp As String
         If colour = 2 Then
             temp = "yellow"
@@ -70,7 +118,7 @@
         End If
         Select Case playerGuessNum
             Case 1 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter11.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter11.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter11.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -98,7 +146,7 @@
                             Case "btnY" : picLetter11.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter11.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter12.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter12.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter12.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -126,7 +174,7 @@
                             Case "btnY" : picLetter12.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter12.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter13.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter13.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter13.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -154,7 +202,7 @@
                             Case "btnY" : picLetter13.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter13.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter14.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter14.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter14.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -182,7 +230,7 @@
                             Case "btnY" : picLetter14.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter14.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter15.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter15.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter15.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -212,7 +260,7 @@
                         End Select
                 End Select
             Case 2 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter21.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter21.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter21.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -240,7 +288,7 @@
                             Case "btnY" : picLetter21.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter21.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter22.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter22.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter22.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -268,7 +316,7 @@
                             Case "btnY" : picLetter22.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter22.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter23.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter23.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter23.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -296,7 +344,7 @@
                             Case "btnY" : picLetter23.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter23.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter24.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter24.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter24.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -324,7 +372,7 @@
                             Case "btnY" : picLetter24.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter24.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter25.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter25.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter25.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -354,7 +402,7 @@
                         End Select
                 End Select
             Case 3 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter31.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter31.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter31.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -382,7 +430,7 @@
                             Case "btnY" : picLetter31.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter31.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter32.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter32.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter32.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -410,7 +458,7 @@
                             Case "btnY" : picLetter32.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter32.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter33.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter33.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter33.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -438,7 +486,7 @@
                             Case "btnY" : picLetter33.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter33.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter34.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter34.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter34.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -466,7 +514,7 @@
                             Case "btnY" : picLetter34.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter34.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter35.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter35.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter35.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -496,7 +544,7 @@
                         End Select
                 End Select
             Case 4 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter41.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter41.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter41.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -524,7 +572,7 @@
                             Case "btnY" : picLetter41.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter41.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter42.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter42.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter42.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -552,7 +600,7 @@
                             Case "btnY" : picLetter42.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter42.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter43.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter43.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter43.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -580,7 +628,7 @@
                             Case "btnY" : picLetter43.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter43.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter44.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter44.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter44.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -608,7 +656,7 @@
                             Case "btnY" : picLetter44.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter44.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter45.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter45.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter45.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -638,7 +686,7 @@
                         End Select
                 End Select
             Case 5 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter51.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter51.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter51.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -666,7 +714,7 @@
                             Case "btnY" : picLetter51.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter51.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter52.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter52.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter52.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -694,7 +742,7 @@
                             Case "btnY" : picLetter52.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter52.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter53.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter53.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter53.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -722,7 +770,7 @@
                             Case "btnY" : picLetter53.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter53.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter54.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter54.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter54.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -750,7 +798,7 @@
                             Case "btnY" : picLetter54.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter54.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter55.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter55.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter55.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -780,7 +828,7 @@
                         End Select
                 End Select
             Case 6 : Select Case character
-                    Case 1 : Select Case letter
+                    Case 0 : Select Case letter
                             Case "btnA" : picLetter61.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter61.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter61.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -808,7 +856,7 @@
                             Case "btnY" : picLetter61.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter61.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 2 : Select Case letter
+                    Case 1 : Select Case letter
                             Case "btnA" : picLetter62.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter62.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter62.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -836,7 +884,7 @@
                             Case "btnY" : picLetter62.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter62.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 3 : Select Case letter
+                    Case 2 : Select Case letter
                             Case "btnA" : picLetter63.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter63.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter63.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -864,7 +912,7 @@
                             Case "btnY" : picLetter63.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter63.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 4 : Select Case letter
+                    Case 3 : Select Case letter
                             Case "btnA" : picLetter64.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter64.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter64.ImageLocation = "assets\" & temp & "\c.jpg"
@@ -892,7 +940,7 @@
                             Case "btnY" : picLetter64.ImageLocation = "assets\" & temp & "\y.jpg"
                             Case "btnZ" : picLetter64.ImageLocation = "assets\" & temp & "\z.jpg"
                         End Select
-                    Case 5 : Select Case letter
+                    Case 4 : Select Case letter
                             Case "btnA" : picLetter65.ImageLocation = "assets\" & temp & "\a.jpg"
                             Case "btnB" : picLetter65.ImageLocation = "assets\" & temp & "\b.jpg"
                             Case "btnC" : picLetter65.ImageLocation = "assets\" & temp & "\c.jpg"

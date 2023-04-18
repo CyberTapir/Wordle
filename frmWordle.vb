@@ -1,16 +1,71 @@
 ﻿Imports System.Linq
 Public Class frmWordle
     Dim word As String = "BASIC"
-    Dim playerScore As Integer
+    Dim wordArray(2877) As String
     Dim playerGuess(5) As String
     Dim btnArray(26) As Button
     Dim guessNum As Integer = 1
     Dim guessStringNum As Integer
-    Private Sub frmWordle_Load(sender As Object, e As EventArgs)
-        playerScore = 0
+
+    Private Sub frmWordle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Randomize()
         lblName.Text = "Name: " & playerName
-        lblScore.Text = "Score: " & playerScore
+        lblScore.Text = "Current Score: " & guessNum
+        lblBestScore.Text = "Best Score Today: " & bestScore
         initialiseControlArray()
+        importWords()
+        word = wordArray((Rnd() * 2876 + 1))
+        MsgBox(word)
+    End Sub
+    Private Sub importWords()
+        Dim temp As String = ""
+        FileSystem.FileOpen(1, "assets\wordlist.txt", OpenMode.Input)
+        For i = 0 To 2876
+            FileSystem.Input(1, temp)
+            wordArray(i) = temp
+        Next i
+        FileSystem.FileClose(1)
+    End Sub
+    Private Sub setup()
+        picLetter11.Image = Nothing
+        picLetter12.Image = Nothing
+        picLetter13.Image = Nothing
+        picLetter14.Image = Nothing
+        picLetter15.Image = Nothing
+        picLetter21.Image = Nothing
+        picLetter22.Image = Nothing
+        picLetter23.Image = Nothing
+        picLetter24.Image = Nothing
+        picLetter25.Image = Nothing
+        picLetter31.Image = Nothing
+        picLetter32.Image = Nothing
+        picLetter33.Image = Nothing
+        picLetter34.Image = Nothing
+        picLetter35.Image = Nothing
+        picLetter41.Image = Nothing
+        picLetter42.Image = Nothing
+        picLetter43.Image = Nothing
+        picLetter44.Image = Nothing
+        picLetter45.Image = Nothing
+        picLetter51.Image = Nothing
+        picLetter52.Image = Nothing
+        picLetter53.Image = Nothing
+        picLetter54.Image = Nothing
+        picLetter55.Image = Nothing
+        picLetter61.Image = Nothing
+        picLetter62.Image = Nothing
+        picLetter63.Image = Nothing
+        picLetter64.Image = Nothing
+        picLetter65.Image = Nothing
+        For i = 0 To 4
+            playerGuess(i) = ""
+        Next i
+        guessNum = 1
+        guessStringNum = 0
+        lblScore.Text = "Current Score: " & guessNum
+        lblBestScore.Text = "Best Score Today: " & bestScore
+        word = wordArray((Rnd() * 2876 + 1))
+        MsgBox(word)
     End Sub
     Private Sub initialiseControlArray()
         btnArray(1) = btnA
@@ -41,68 +96,82 @@ Public Class frmWordle
         btnArray(26) = btnZ
     End Sub
     Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
-        Dim sendingLetter As String = ""
-        For i = 0 To 4
-            Select Case playerGuess(i)
-                Case "A" : sendingLetter = "btnA"
-                Case "B" : sendingLetter = "btnB"
-                Case "C" : sendingLetter = "btnC"
-                Case "D" : sendingLetter = "btnD"
-                Case "E" : sendingLetter = "btnE"
-                Case "F" : sendingLetter = "btnF"
-                Case "G" : sendingLetter = "btnG"
-                Case "H" : sendingLetter = "btnH"
-                Case "I" : sendingLetter = "btnI"
-                Case "J" : sendingLetter = "btnJ"
-                Case "K" : sendingLetter = "btnK"
-                Case "L" : sendingLetter = "btnL"
-                Case "M" : sendingLetter = "btnM"
-                Case "N" : sendingLetter = "btnN"
-                Case "O" : sendingLetter = "btnO"
-                Case "P" : sendingLetter = "btnP"
-                Case "Q" : sendingLetter = "btnQ"
-                Case "R" : sendingLetter = "btnR"
-                Case "S" : sendingLetter = "btnS"
-                Case "T" : sendingLetter = "btnT"
-                Case "U" : sendingLetter = "btnU"
-                Case "V" : sendingLetter = "btnV"
-                Case "W" : sendingLetter = "btnW"
-                Case "X" : sendingLetter = "btnX"
-                Case "Y" : sendingLetter = "btnY"
-                Case "Z" : sendingLetter = "btnZ"
-            End Select
-            If playerGuess(i) = word(i) Then
-
-                updateDisplay(guessNum, i, sendingLetter, 3)
-            ElseIf playerGuess(i) <> word(i) Then
-                If playerGuess(i) = word(0) And i <> 0 Then
-                    updateDisplay(guessNum, i, sendingLetter, 2)
-                ElseIf playerGuess(i) = word(1) And i <> 1 Then
-                    updateDisplay(guessNum, i, sendingLetter, 2)
-                ElseIf playerGuess(i) = word(2) And i <> 2 Then
-                    updateDisplay(guessNum, i, sendingLetter, 2)
-                ElseIf playerGuess(i) = word(3) And i <> 3 Then
-                    updateDisplay(guessNum, i, sendingLetter, 2)
-                ElseIf playerGuess(i) = word(4) And i <> 4 Then
-                    updateDisplay(guessNum, i, sendingLetter, 2)
-                Else
-                    updateDisplay(guessNum, i, sendingLetter, 1)
+        If guessStringNum = 5 Then
+            Dim correctCount As Integer
+            Dim sendingLetter As String = ""
+            For i = 0 To 4
+                Select Case playerGuess(i)
+                    Case "A" : sendingLetter = "btnA"
+                    Case "B" : sendingLetter = "btnB"
+                    Case "C" : sendingLetter = "btnC"
+                    Case "D" : sendingLetter = "btnD"
+                    Case "E" : sendingLetter = "btnE"
+                    Case "F" : sendingLetter = "btnF"
+                    Case "G" : sendingLetter = "btnG"
+                    Case "H" : sendingLetter = "btnH"
+                    Case "I" : sendingLetter = "btnI"
+                    Case "J" : sendingLetter = "btnJ"
+                    Case "K" : sendingLetter = "btnK"
+                    Case "L" : sendingLetter = "btnL"
+                    Case "M" : sendingLetter = "btnM"
+                    Case "N" : sendingLetter = "btnN"
+                    Case "O" : sendingLetter = "btnO"
+                    Case "P" : sendingLetter = "btnP"
+                    Case "Q" : sendingLetter = "btnQ"
+                    Case "R" : sendingLetter = "btnR"
+                    Case "S" : sendingLetter = "btnS"
+                    Case "T" : sendingLetter = "btnT"
+                    Case "U" : sendingLetter = "btnU"
+                    Case "V" : sendingLetter = "btnV"
+                    Case "W" : sendingLetter = "btnW"
+                    Case "X" : sendingLetter = "btnX"
+                    Case "Y" : sendingLetter = "btnY"
+                    Case "Z" : sendingLetter = "btnZ"
+                End Select
+                If playerGuess(i) = word(i) Then
+                    updateDisplay(guessNum, i, sendingLetter, 3)
+                    If correctCount = 4 Then
+                        gameOver(guessNum)
+                    Else
+                        correctCount = correctCount + 1
+                    End If
+                ElseIf playerGuess(i) <> word(i) Then
+                    If playerGuess(i) = word(0) And i <> 0 Then
+                        updateDisplay(guessNum, i, sendingLetter, 2)
+                    ElseIf playerGuess(i) = word(1) And i <> 1 Then
+                        updateDisplay(guessNum, i, sendingLetter, 2)
+                    ElseIf playerGuess(i) = word(2) And i <> 2 Then
+                        updateDisplay(guessNum, i, sendingLetter, 2)
+                    ElseIf playerGuess(i) = word(3) And i <> 3 Then
+                        updateDisplay(guessNum, i, sendingLetter, 2)
+                    ElseIf playerGuess(i) = word(4) And i <> 4 Then
+                        updateDisplay(guessNum, i, sendingLetter, 2)
+                    Else
+                        updateDisplay(guessNum, i, sendingLetter, 1)
+                    End If
                 End If
+                playerGuess(i) = ""
+            Next i
+            If guessNum = 7 Then
+                gameOver(7)
+            Else
+                guessNum = guessNum + 1
             End If
-            playerGuess(i) = ""
-        Next i
-        guessNum = guessNum + 1
-        guessStringNum = 0
+            guessStringNum = 0
+            lblScore.Text = "Current Score: " & guessNum
+        End If
     End Sub
     Private Sub btnQ_Click(sender As Object, e As EventArgs) Handles btnA.Click, btnB.Click, btnC.Click, btnD.Click, btnE.Click, btnF.Click, btnG.Click, btnH.Click, btnI.Click, btnJ.Click, btnK.Click, btnL.Click, btnM.Click, btnN.Click, btnO.Click, btnP.Click, btnQ.Click, btnR.Click, btnS.Click, btnT.Click, btnU.Click, btnV.Click, btnW.Click, btnX.Click, btnY.Click, btnZ.Click
-        Dim controlName As String
-        Dim controlName1 As String
-        controlName = sender.name
-        controlName1 = sender.name(3)
-        If guessStringNum < 6 Then
-            updateDisplay(guessNum, guessStringNum, controlName, 0)
-            playerGuess(guessStringNum) = controlName1
-            guessStringNum = guessStringNum + 1
+        If guessStringNum < 5 Then
+            Dim controlName As String
+            Dim controlName1 As String
+            controlName = sender.name
+            controlName1 = sender.name(3)
+            If guessStringNum < 6 Then
+                updateDisplay(guessNum, guessStringNum, controlName, 0)
+                playerGuess(guessStringNum) = controlName1
+                guessStringNum = guessStringNum + 1
+            End If
         End If
     End Sub
     Private Sub updateDisplay(playerGuessNum As Integer, character As Integer, letter As String, colour As Integer)
@@ -970,5 +1039,70 @@ Public Class frmWordle
                         End Select
                 End Select
         End Select
+    End Sub
+    Private Sub btnBackspace_Click(sender As Object, e As EventArgs) Handles btnBackspace.Click
+        Select Case guessNum
+            Case 1 : Select Case guessStringNum
+                    Case 1 : picLetter11.Image = Nothing
+                    Case 2 : picLetter12.Image = Nothing
+                    Case 3 : picLetter13.Image = Nothing
+                    Case 4 : picLetter14.Image = Nothing
+                    Case 5 : picLetter15.Image = Nothing
+                End Select
+            Case 2 : Select Case guessStringNum
+                    Case 1 : picLetter21.Image = Nothing
+                    Case 2 : picLetter22.Image = Nothing
+                    Case 3 : picLetter23.Image = Nothing
+                    Case 4 : picLetter24.Image = Nothing
+                    Case 5 : picLetter25.Image = Nothing
+                End Select
+            Case 3 : Select Case guessStringNum
+                    Case 1 : picLetter31.Image = Nothing
+                    Case 2 : picLetter32.Image = Nothing
+                    Case 3 : picLetter33.Image = Nothing
+                    Case 4 : picLetter34.Image = Nothing
+                    Case 5 : picLetter35.Image = Nothing
+                End Select
+            Case 4 : Select Case guessStringNum
+                    Case 1 : picLetter41.Image = Nothing
+                    Case 2 : picLetter42.Image = Nothing
+                    Case 3 : picLetter43.Image = Nothing
+                    Case 4 : picLetter44.Image = Nothing
+                    Case 5 : picLetter45.Image = Nothing
+                End Select
+            Case 5 : Select Case guessStringNum
+                    Case 1 : picLetter51.Image = Nothing
+                    Case 2 : picLetter52.Image = Nothing
+                    Case 3 : picLetter53.Image = Nothing
+                    Case 4 : picLetter54.Image = Nothing
+                    Case 5 : picLetter55.Image = Nothing
+                End Select
+            Case 6 : Select Case guessStringNum
+                    Case 1 : picLetter61.Image = Nothing
+                    Case 2 : picLetter62.Image = Nothing
+                    Case 3 : picLetter63.Image = Nothing
+                    Case 4 : picLetter64.Image = Nothing
+                    Case 5 : picLetter65.Image = Nothing
+                End Select
+        End Select
+        If guessStringNum > 0 Then
+            guessStringNum = guessStringNum - 1
+        End If
+    End Sub
+    Private Sub gameOver(guesses As Integer)
+        Dim result As Boolean
+        If guesses = 7 Then
+            result = False
+            MsgBox("Sorry " & playerName & ", You didn't guess the word. The word was " & word)
+        Else
+            result = True
+            If guesses < bestScore Then
+                bestScore = guesses
+            End If
+            MsgBox("Congratulations " & playerName & ", You guessed the word in " & guesses & " guesses!")
+        End If
+        frmStartWordle.Show()
+        Me.Hide()
+        setup()
     End Sub
 End Class

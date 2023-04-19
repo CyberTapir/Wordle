@@ -1,7 +1,11 @@
 ﻿Public Class frmStartWordle
     Private Sub btnStartGame_Click(sender As Object, e As EventArgs) Handles btnStartGame.Click
         playerName = txtNameInput.Text
-        frmWordle.Show()
-        Me.Hide()
+        If playerName.Length > 10 Then
+            MsgBox("That's a long name. Try a shorter one")
+        Else
+            frmWordle.Show()
+            Me.Hide()
+        End If
     End Sub
 End Class

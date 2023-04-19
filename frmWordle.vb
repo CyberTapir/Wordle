@@ -6,12 +6,11 @@ Public Class frmWordle
     Dim btnArray(26) As Button
     Dim guessNum As Integer = 1
     Dim guessStringNum As Integer
-
     Private Sub frmWordle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Randomize()
         lblName.Text = "Name: " & playerName
         lblScore.Text = "Current Score: " & guessNum
-        lblBestScore.Text = "Best Score Today: " & bestScore
+        lblBestScore.Text = "Best Score Today: Not Set"
         initialiseControlArray()
         importWords()
         word = wordArray((Rnd() * 2876 + 1))
@@ -60,10 +59,12 @@ Public Class frmWordle
         For i = 0 To 4
             playerGuess(i) = ""
         Next i
-        guessNum = 1
+        guessNum = 0
         guessStringNum = 0
         lblScore.Text = "Current Score: " & guessNum
-        lblBestScore.Text = "Best Score Today: " & bestScore
+        If bestScore < 7 Then
+            lblBestScore.Text = "Best Score Today: " & bestScore
+        End If
         word = wordArray((Rnd() * 2876 + 1))
         MsgBox(word)
     End Sub

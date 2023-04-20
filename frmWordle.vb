@@ -14,7 +14,6 @@ Public Class frmWordle
         initialiseControlArray()
         importWords()
         word = wordArray((Rnd() * 2876 + 1))
-        MsgBox(word)
     End Sub
     Private Sub importWords()
         Dim temp As String = ""
@@ -66,7 +65,6 @@ Public Class frmWordle
             lblBestScore.Text = "Best Score Today: " & bestScore
         End If
         word = wordArray((Rnd() * 2876 + 1))
-        MsgBox(word)
     End Sub
     Private Sub initialiseControlArray()
         btnArray(1) = btnA
@@ -98,68 +96,90 @@ Public Class frmWordle
     End Sub
     Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
         If guessStringNum = 5 Then
-            Dim correctCount As Integer
-            Dim sendingLetter As String = ""
-            For i = 0 To 4
-                Select Case playerGuess(i)
-                    Case "A" : sendingLetter = "btnA"
-                    Case "B" : sendingLetter = "btnB"
-                    Case "C" : sendingLetter = "btnC"
-                    Case "D" : sendingLetter = "btnD"
-                    Case "E" : sendingLetter = "btnE"
-                    Case "F" : sendingLetter = "btnF"
-                    Case "G" : sendingLetter = "btnG"
-                    Case "H" : sendingLetter = "btnH"
-                    Case "I" : sendingLetter = "btnI"
-                    Case "J" : sendingLetter = "btnJ"
-                    Case "K" : sendingLetter = "btnK"
-                    Case "L" : sendingLetter = "btnL"
-                    Case "M" : sendingLetter = "btnM"
-                    Case "N" : sendingLetter = "btnN"
-                    Case "O" : sendingLetter = "btnO"
-                    Case "P" : sendingLetter = "btnP"
-                    Case "Q" : sendingLetter = "btnQ"
-                    Case "R" : sendingLetter = "btnR"
-                    Case "S" : sendingLetter = "btnS"
-                    Case "T" : sendingLetter = "btnT"
-                    Case "U" : sendingLetter = "btnU"
-                    Case "V" : sendingLetter = "btnV"
-                    Case "W" : sendingLetter = "btnW"
-                    Case "X" : sendingLetter = "btnX"
-                    Case "Y" : sendingLetter = "btnY"
-                    Case "Z" : sendingLetter = "btnZ"
-                End Select
-                If playerGuess(i) = word(i) Then
-                    updateDisplay(guessNum, i, sendingLetter, 3)
-                    If correctCount = 4 Then
-                        gameOver(guessNum)
-                    Else
-                        correctCount = correctCount + 1
-                    End If
-                ElseIf playerGuess(i) <> word(i) Then
-                    If playerGuess(i) = word(0) And i <> 0 Then
-                        updateDisplay(guessNum, i, sendingLetter, 2)
-                    ElseIf playerGuess(i) = word(1) And i <> 1 Then
-                        updateDisplay(guessNum, i, sendingLetter, 2)
-                    ElseIf playerGuess(i) = word(2) And i <> 2 Then
-                        updateDisplay(guessNum, i, sendingLetter, 2)
-                    ElseIf playerGuess(i) = word(3) And i <> 3 Then
-                        updateDisplay(guessNum, i, sendingLetter, 2)
-                    ElseIf playerGuess(i) = word(4) And i <> 4 Then
-                        updateDisplay(guessNum, i, sendingLetter, 2)
-                    Else
-                        updateDisplay(guessNum, i, sendingLetter, 1)
-                    End If
+            'check for word in wordlist
+            Dim first As Integer = 0
+            Dim last As Integer = 2876
+            Dim middle As Integer = (first + last) / 2
+            Dim item As String = playerGuess(0) & playerGuess(1) & playerGuess(2) & playerGuess(3) & playerGuess(4)
+            Dim flag As Integer = 0
+            While first <= last
+                If (wordArray(middle) < item) Then
+                    first = middle + 1
+                ElseIf (wordArray(middle) = item) Then
+                    flag = middle
+                    GoTo out
+                Else
+                    last = middle - 1
                 End If
-                playerGuess(i) = ""
-            Next i
-            If guessNum = 7 Then
-                gameOver(7)
+                middle = (first + last) / 2
+            End While
+out:
+            If flag = 0 Then
+                MsgBox("That's not a valid word. Remember We don't use duplicate letters")
             Else
-                guessNum = guessNum + 1
+                Dim correctCount As Integer
+                Dim sendingLetter As String = ""
+                For i = 0 To 4
+                    Select Case playerGuess(i)
+                        Case "A" : sendingLetter = "btnA"
+                        Case "B" : sendingLetter = "btnB"
+                        Case "C" : sendingLetter = "btnC"
+                        Case "D" : sendingLetter = "btnD"
+                        Case "E" : sendingLetter = "btnE"
+                        Case "F" : sendingLetter = "btnF"
+                        Case "G" : sendingLetter = "btnG"
+                        Case "H" : sendingLetter = "btnH"
+                        Case "I" : sendingLetter = "btnI"
+                        Case "J" : sendingLetter = "btnJ"
+                        Case "K" : sendingLetter = "btnK"
+                        Case "L" : sendingLetter = "btnL"
+                        Case "M" : sendingLetter = "btnM"
+                        Case "N" : sendingLetter = "btnN"
+                        Case "O" : sendingLetter = "btnO"
+                        Case "P" : sendingLetter = "btnP"
+                        Case "Q" : sendingLetter = "btnQ"
+                        Case "R" : sendingLetter = "btnR"
+                        Case "S" : sendingLetter = "btnS"
+                        Case "T" : sendingLetter = "btnT"
+                        Case "U" : sendingLetter = "btnU"
+                        Case "V" : sendingLetter = "btnV"
+                        Case "W" : sendingLetter = "btnW"
+                        Case "X" : sendingLetter = "btnX"
+                        Case "Y" : sendingLetter = "btnY"
+                        Case "Z" : sendingLetter = "btnZ"
+                    End Select
+                    If playerGuess(i) = word(i) Then
+                        updateDisplay(guessNum, i, sendingLetter, 3)
+                        If correctCount = 4 Then
+                            gameOver(guessNum)
+                        Else
+                            correctCount = correctCount + 1
+                        End If
+                    ElseIf playerGuess(i) <> word(i) Then
+                        If playerGuess(i) = word(0) And i <> 0 Then
+                            updateDisplay(guessNum, i, sendingLetter, 2)
+                        ElseIf playerGuess(i) = word(1) And i <> 1 Then
+                            updateDisplay(guessNum, i, sendingLetter, 2)
+                        ElseIf playerGuess(i) = word(2) And i <> 2 Then
+                            updateDisplay(guessNum, i, sendingLetter, 2)
+                        ElseIf playerGuess(i) = word(3) And i <> 3 Then
+                            updateDisplay(guessNum, i, sendingLetter, 2)
+                        ElseIf playerGuess(i) = word(4) And i <> 4 Then
+                            updateDisplay(guessNum, i, sendingLetter, 2)
+                        Else
+                            updateDisplay(guessNum, i, sendingLetter, 1)
+                        End If
+                    End If
+                    playerGuess(i) = ""
+                Next i
+                If guessNum = 7 Then
+                    gameOver(7)
+                Else
+                    guessNum = guessNum + 1
+                End If
+                guessStringNum = 0
+                lblScore.Text = "Current Score: " & guessNum
             End If
-            guessStringNum = 0
-            lblScore.Text = "Current Score: " & guessNum
         End If
     End Sub
     Private Sub btnQ_Click(sender As Object, e As EventArgs) Handles btnA.Click, btnB.Click, btnC.Click, btnD.Click, btnE.Click, btnF.Click, btnG.Click, btnH.Click, btnI.Click, btnJ.Click, btnK.Click, btnL.Click, btnM.Click, btnN.Click, btnO.Click, btnP.Click, btnQ.Click, btnR.Click, btnS.Click, btnT.Click, btnU.Click, btnV.Click, btnW.Click, btnX.Click, btnY.Click, btnZ.Click

@@ -6,7 +6,12 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ApplicationIcon>bin\Debug\net6.0-windows\assets\w.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0-windows\assets\w.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />

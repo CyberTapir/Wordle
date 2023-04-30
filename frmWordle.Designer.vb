@@ -762,6 +762,7 @@ Partial Class frmWordle
         Controls.Add(picLetter12)
         Controls.Add(picLetter11)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        KeyPreview = True
         Name = "frmWordle"
         Text = "Wordle"
         CType(picLetter11, ComponentModel.ISupportInitialize).EndInit()

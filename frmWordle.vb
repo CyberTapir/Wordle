@@ -1,25 +1,26 @@
 ﻿Imports System.Linq
 Public Class frmWordle
-    Dim word As String = "BASIC"
-    Dim wordArray(8639) As String
+    Dim word As String = "ERROR"
+    Dim wordArray(21113) As String
     Dim playerGuess(5) As String
     Dim btnArray(26) As Button
     Dim guessNum As Integer = 1
     Dim guessStringNum As Integer
     Private Sub frmWordle_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.KeyPreview = True
+        KeyPreview = True
         Randomize()
         lblName.Text = "Name: " & playerName
         lblScore.Text = "Current Score: " & guessNum
         lblBestScore.Text = "Best Score Today: Not Set"
         initialiseControlArray()
         importWords()
-        word = wordArray((Rnd() * 8638 + 1))
+        word = wordArray((Rnd() * 21112 + 1))
     End Sub
     Private Sub importWords()
         Dim temp As String = ""
-        FileSystem.FileOpen(1, "C:\Users\callumbennett\source\repos\Wordle\bin\Debug\net6.0-windows\assets\wordlist.txt", OpenMode.Input)
-        For i = 0 To 8638
+        FileSystem.FileOpen(1, "assets\wordlist.txt", OpenMode.Input)
+        For i = 0 To 21111
             FileSystem.Input(1, temp)
             wordArray(i) = temp
         Next i
@@ -78,7 +79,7 @@ Public Class frmWordle
         If bestScore < 7 Then
             lblBestScore.Text = "Best Score Today: " & bestScore
         End If
-        word = wordArray((Rnd() * 8638 + 1))
+        word = wordArray((Rnd() * 21112 + 1))
     End Sub
     Private Sub initialiseControlArray()
         btnArray(1) = btnA
@@ -111,7 +112,7 @@ Public Class frmWordle
     Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
         If guessStringNum = 5 Then
             Dim first As Integer = 0
-            Dim last As Integer = 8638
+            Dim last As Integer = 21112
             Dim middle As Integer = (first + last) / 2
             Dim item As String = playerGuess(0) & playerGuess(1) & playerGuess(2) & playerGuess(3) & playerGuess(4)
             Dim flag As Integer = 0
@@ -133,34 +134,35 @@ out:
                 Dim correctCount As Integer
                 Dim sendingLetter As String = ""
                 For i = 0 To 4
-                    Select Case playerGuess(i)
-                        Case "A" : sendingLetter = "btnA"
-                        Case "B" : sendingLetter = "btnB"
-                        Case "C" : sendingLetter = "btnC"
-                        Case "D" : sendingLetter = "btnD"
-                        Case "E" : sendingLetter = "btnE"
-                        Case "F" : sendingLetter = "btnF"
-                        Case "G" : sendingLetter = "btnG"
-                        Case "H" : sendingLetter = "btnH"
-                        Case "I" : sendingLetter = "btnI"
-                        Case "J" : sendingLetter = "btnJ"
-                        Case "K" : sendingLetter = "btnK"
-                        Case "L" : sendingLetter = "btnL"
-                        Case "M" : sendingLetter = "btnM"
-                        Case "N" : sendingLetter = "btnN"
-                        Case "O" : sendingLetter = "btnO"
-                        Case "P" : sendingLetter = "btnP"
-                        Case "Q" : sendingLetter = "btnQ"
-                        Case "R" : sendingLetter = "btnR"
-                        Case "S" : sendingLetter = "btnS"
-                        Case "T" : sendingLetter = "btnT"
-                        Case "U" : sendingLetter = "btnU"
-                        Case "V" : sendingLetter = "btnV"
-                        Case "W" : sendingLetter = "btnW"
-                        Case "X" : sendingLetter = "btnX"
-                        Case "Y" : sendingLetter = "btnY"
-                        Case "Z" : sendingLetter = "btnZ"
-                    End Select
+                    sendingLetter = "btn" & playerGuess(i)
+                    'Select Case playerGuess(i)
+                    '    Case "A" : sendingLetter = "btnA"
+                    '    Case "B" : sendingLetter = "btnB"
+                    '    Case "C" : sendingLetter = "btnC"
+                    '    Case "D" : sendingLetter = "btnD"
+                    '    Case "E" : sendingLetter = "btnE"
+                    '    Case "F" : sendingLetter = "btnF"
+                    '    Case "G" : sendingLetter = "btnG"
+                    '    Case "H" : sendingLetter = "btnH"
+                    '    Case "I" : sendingLetter = "btnI"
+                    '    Case "J" : sendingLetter = "btnJ"
+                    '    Case "K" : sendingLetter = "btnK"
+                    '    Case "L" : sendingLetter = "btnL"
+                    '    Case "M" : sendingLetter = "btnM"
+                    '    Case "N" : sendingLetter = "btnN"
+                    '    Case "O" : sendingLetter = "btnO"
+                    '    Case "P" : sendingLetter = "btnP"
+                    '    Case "Q" : sendingLetter = "btnQ"
+                    '    Case "R" : sendingLetter = "btnR"
+                    '    Case "S" : sendingLetter = "btnS"
+                    '    Case "T" : sendingLetter = "btnT"
+                    '    Case "U" : sendingLetter = "btnU"
+                    '    Case "V" : sendingLetter = "btnV"
+                    '    Case "W" : sendingLetter = "btnW"
+                    '    Case "X" : sendingLetter = "btnX"
+                    '    Case "Y" : sendingLetter = "btnY"
+                    '    Case "Z" : sendingLetter = "btnZ"
+                    'End Select
                     If playerGuess(i) = word(i) Then
                         updateDisplay(guessNum, i, sendingLetter, 3, True)
                         If correctCount = 4 Then
@@ -199,6 +201,10 @@ out:
         End If
 
     End Sub
+    Private Function sendLetter(character As Char) As String
+        Return
+    End Function
+
     Private Sub updateGuess(controlName As String)
         If guessStringNum < 5 Then
             Dim controlName1 As String
@@ -210,7 +216,7 @@ out:
             End If
         End If
     End Sub
-    Private Sub frmWordle_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+    Private Sub frmWordle_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         Me.Focus()
         e.Handled = True
         Dim controlName As String = ""
@@ -244,7 +250,7 @@ out:
             Case Keys.Return, Keys.Enter, Keys.Separator
                 If guessStringNum = 5 Then
                     Dim first As Integer = 0
-                    Dim last As Integer = 8638
+                    Dim last As Integer = 21112
                     Dim middle As Integer = (first + last) / 2
                     Dim item As String = playerGuess(0) & playerGuess(1) & playerGuess(2) & playerGuess(3) & playerGuess(4)
                     Dim flag As Integer = 0

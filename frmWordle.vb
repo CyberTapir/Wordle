@@ -163,6 +163,8 @@ out:
                     '    Case "Y" : sendingLetter = "btnY"
                     '    Case "Z" : sendingLetter = "btnZ"
                     'End Select
+
+                    'Function with Word, chosen letter, position of letter: return colour as integer
                     If playerGuess(i) = word(i) Then
                         updateDisplay(guessNum, i, sendingLetter, 3, True)
                         If correctCount = 4 Then
@@ -201,9 +203,6 @@ out:
         End If
 
     End Sub
-    Private Function sendLetter(character As Char) As String
-        Return
-    End Function
 
     Private Sub updateGuess(controlName As String)
         If guessStringNum < 5 Then

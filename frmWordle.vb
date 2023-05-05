@@ -389,76 +389,46 @@ Out:
         End If
         Select Case playerGuessNum
             Case 1 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
             Case 2 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(6).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(7).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(8).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(9).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(10).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
             Case 3 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(11).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(12).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(13).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(14).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(15).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
             Case 4 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(16).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(17).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(18).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(19).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(20).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
             Case 5 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(21).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(22).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(23).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(24).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(25).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
             Case 6 : Select Case character
-                    Case 0
-                        pictureArray(1).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 1
-                        pictureArray(2).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 2
-                        pictureArray(3).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 3
-                        pictureArray(4).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
-                    Case 4
-                        pictureArray(5).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 0 : pictureArray(26).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 1 : pictureArray(27).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 2 : pictureArray(28).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 3 : pictureArray(29).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
+                    Case 4 : pictureArray(30).ImageLocation = "assets\" & temp & "\" & LCase(letter(3)) & ".jpg"
                 End Select
         End Select
     End Sub

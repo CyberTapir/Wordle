@@ -125,6 +125,20 @@ Public Class frmWordle
         pictureArray(14) = picLetter34
         pictureArray(15) = picLetter35
         pictureArray(16) = picLetter41
+        pictureArray(17) = picLetter42
+        pictureArray(18) = picLetter43
+        pictureArray(19) = picLetter44
+        pictureArray(20) = picLetter45
+        pictureArray(21) = picLetter51
+        pictureArray(22) = picLetter52
+        pictureArray(23) = picLetter53
+        pictureArray(24) = picLetter54
+        pictureArray(25) = picLetter55
+        pictureArray(26) = picLetter61
+        pictureArray(27) = picLetter62
+        pictureArray(28) = picLetter63
+        pictureArray(29) = picLetter64
+        pictureArray(30) = picLetter65
     End Sub
     Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
         If guessStringNum = 5 Then

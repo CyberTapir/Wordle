@@ -216,7 +216,7 @@ out:
             End If
         End If
     End Sub
-    Private Sub frmWordle_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+    Private Sub frmWordle_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         Me.Focus()
         e.Handled = True
         Dim controlName As String = ""

@@ -28,12 +28,12 @@ Namespace My
             Me.EnableVisualStyles = true
             Me.SaveMySettingsOnExit = true
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
-            Me.HighDpiMode = HighDpiMode.PerMonitor
+            Me.HighDpiMode = HighDpiMode.PerMonitorV2
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Wordle.frmStartWordle
+            Me.MainForm = frmStartWordle
         End Sub
     End Class
 End Namespace

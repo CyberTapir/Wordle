@@ -28,49 +28,12 @@ Public Class frmWordle
         FileSystem.FileClose(1)
     End Sub
     Private Sub setup()
-        picLetter11.Image = Nothing
-        picLetter12.Image = Nothing
-        picLetter13.Image = Nothing
-        picLetter14.Image = Nothing
-        picLetter15.Image = Nothing
-        picLetter21.Image = Nothing
-        picLetter22.Image = Nothing
-        picLetter23.Image = Nothing
-        picLetter24.Image = Nothing
-        picLetter25.Image = Nothing
-        picLetter31.Image = Nothing
-        picLetter32.Image = Nothing
-        picLetter33.Image = Nothing
-        picLetter34.Image = Nothing
-        picLetter35.Image = Nothing
-        picLetter41.Image = Nothing
-        picLetter42.Image = Nothing
-        picLetter43.Image = Nothing
-        picLetter44.Image = Nothing
-        picLetter45.Image = Nothing
-        picLetter51.Image = Nothing
-        picLetter52.Image = Nothing
-        picLetter53.Image = Nothing
-        picLetter54.Image = Nothing
-        picLetter55.Image = Nothing
-        picLetter61.Image = Nothing
-        picLetter62.Image = Nothing
-        picLetter63.Image = Nothing
-        picLetter64.Image = Nothing
-        picLetter65.Image = Nothing
-        btnA.BackColor = Nothing
-        btnB.BackColor = Nothing
-        btnC.BackColor = Nothing
-        btnD.BackColor = Nothing
-        btnE.BackColor = Nothing
-        btnF.BackColor = Nothing
-        btnG.BackColor = Nothing
-        btnH.BackColor = Nothing
-        btnI.BackColor = Nothing
-        btnJ.BackColor = Nothing
-        btnK.BackColor = Nothing
-        btnL.BackColor = Nothing
-        btnM.BackColor = Nothing
+        For i = 1 To 30
+            pictureArray(i) = Nothing
+        Next i
+        For i = 1 To 26
+            btnArray(i) = Nothing
+        Next i
         For i = 0 To 4
             playerGuess(i) = ""
         Next i

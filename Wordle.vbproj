@@ -6,7 +6,7 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>bin\Debug\net6.0-windows\assets\w.ico</ApplicationIcon>
+    <ApplicationIcon>bin\Debug\net6.0-windows10.0.17763.0\assets\w.ico</ApplicationIcon>
     <ImportedNamespaces>System.Data=False,System.Drawing=False,System.Windows.Forms=False,Wordle.My=False,Wordle.My.Resources=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,Wordle=True</ImportedNamespaces>
     <Title>Wordle</Title>
     <Authors>CyberTapir</Authors>
@@ -18,8 +18,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
 
   <ItemGroup>
-    <Content Include="bin\Debug\net6.0-windows\assets\w.ico" />
-    <Content Include="bin\Debug\net6.0-windows\assets\wordlist.txt">
+    <Content Include="bin\Debug\net6.0-windows10.0.17763.0\assets\w.ico" />
+    <Content Include="bin\Debug\net6.0-windows10.0.17763.0\assets\wordlist.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

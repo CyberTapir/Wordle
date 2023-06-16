@@ -41,100 +41,87 @@ Partial Class frmStartWordle
         ' 
         ' txtNameInput
         ' 
-        txtNameInput.Location = New Point(487, 277)
-        txtNameInput.Margin = New Padding(6)
+        txtNameInput.Location = New Point(262, 130)
         txtNameInput.Name = "txtNameInput"
-        txtNameInput.Size = New Size(182, 39)
+        txtNameInput.Size = New Size(100, 23)
         txtNameInput.TabIndex = 0
         txtNameInput.Text = "Name"
         ' 
         ' btnStartGame
         ' 
-        btnStartGame.Location = New Point(505, 390)
-        btnStartGame.Margin = New Padding(6)
+        btnStartGame.Location = New Point(272, 183)
         btnStartGame.Name = "btnStartGame"
-        btnStartGame.Size = New Size(139, 49)
+        btnStartGame.Size = New Size(75, 23)
         btnStartGame.TabIndex = 1
         btnStartGame.Text = "Play!"
         btnStartGame.UseVisualStyleBackColor = True
         ' 
         ' picStartWordleE
         ' 
-        picStartWordleE.BorderStyle = BorderStyle.FixedSingle
         picStartWordleE.Image = CType(resources.GetObject("picStartWordleE.Image"), Image)
-        picStartWordleE.Location = New Point(895, 68)
-        picStartWordleE.Margin = New Padding(6)
+        picStartWordleE.Location = New Point(482, 32)
         picStartWordleE.Name = "picStartWordleE"
-        picStartWordleE.Size = New Size(147, 147)
+        picStartWordleE.Size = New Size(80, 70)
         picStartWordleE.SizeMode = PictureBoxSizeMode.Zoom
         picStartWordleE.TabIndex = 5
         picStartWordleE.TabStop = False
         ' 
         ' picStartWordleL
         ' 
-        picStartWordleL.BorderStyle = BorderStyle.FixedSingle
         picStartWordleL.Image = CType(resources.GetObject("picStartWordleL.Image"), Image)
-        picStartWordleL.Location = New Point(735, 68)
-        picStartWordleL.Margin = New Padding(6)
+        picStartWordleL.Location = New Point(396, 32)
         picStartWordleL.Name = "picStartWordleL"
-        picStartWordleL.Size = New Size(147, 147)
+        picStartWordleL.Size = New Size(80, 70)
         picStartWordleL.SizeMode = PictureBoxSizeMode.Zoom
         picStartWordleL.TabIndex = 6
         picStartWordleL.TabStop = False
         ' 
         ' picStartWordleD
         ' 
-        picStartWordleD.BorderStyle = BorderStyle.FixedSingle
         picStartWordleD.Image = CType(resources.GetObject("picStartWordleD.Image"), Image)
-        picStartWordleD.Location = New Point(576, 68)
-        picStartWordleD.Margin = New Padding(6)
+        picStartWordleD.Location = New Point(310, 32)
         picStartWordleD.Name = "picStartWordleD"
-        picStartWordleD.Size = New Size(147, 147)
+        picStartWordleD.Size = New Size(80, 70)
         picStartWordleD.SizeMode = PictureBoxSizeMode.Zoom
         picStartWordleD.TabIndex = 7
         picStartWordleD.TabStop = False
         ' 
         ' picStartWordleR
         ' 
-        picStartWordleR.BorderStyle = BorderStyle.FixedSingle
         picStartWordleR.Image = CType(resources.GetObject("picStartWordleR.Image"), Image)
-        picStartWordleR.Location = New Point(416, 68)
-        picStartWordleR.Margin = New Padding(6)
+        picStartWordleR.Location = New Point(224, 32)
         picStartWordleR.Name = "picStartWordleR"
-        picStartWordleR.Size = New Size(147, 147)
+        picStartWordleR.Size = New Size(80, 70)
         picStartWordleR.SizeMode = PictureBoxSizeMode.Zoom
         picStartWordleR.TabIndex = 8
         picStartWordleR.TabStop = False
         ' 
         ' frmStartWordleO
         ' 
-        frmStartWordleO.BorderStyle = BorderStyle.FixedSingle
         frmStartWordleO.Image = CType(resources.GetObject("frmStartWordleO.Image"), Image)
-        frmStartWordleO.Location = New Point(256, 68)
-        frmStartWordleO.Margin = New Padding(6)
+        frmStartWordleO.Location = New Point(138, 32)
         frmStartWordleO.Name = "frmStartWordleO"
-        frmStartWordleO.Size = New Size(147, 147)
+        frmStartWordleO.Size = New Size(80, 70)
         frmStartWordleO.SizeMode = PictureBoxSizeMode.Zoom
         frmStartWordleO.TabIndex = 9
         frmStartWordleO.TabStop = False
         ' 
         ' picStartWordleW
         ' 
-        picStartWordleW.BorderStyle = BorderStyle.FixedSingle
         picStartWordleW.Image = CType(resources.GetObject("picStartWordleW.Image"), Image)
-        picStartWordleW.Location = New Point(97, 68)
-        picStartWordleW.Margin = New Padding(6)
+        picStartWordleW.Location = New Point(52, 32)
         picStartWordleW.Name = "picStartWordleW"
-        picStartWordleW.Size = New Size(147, 147)
+        picStartWordleW.Size = New Size(80, 70)
         picStartWordleW.SizeMode = PictureBoxSizeMode.Zoom
         picStartWordleW.TabIndex = 10
         picStartWordleW.TabStop = False
         ' 
         ' frmStartWordle
         ' 
-        AutoScaleDimensions = New SizeF(13.0F, 32.0F)
+        AcceptButton = btnStartGame
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1172, 525)
+        ClientSize = New Size(631, 250)
         Controls.Add(picStartWordleW)
         Controls.Add(frmStartWordleO)
         Controls.Add(picStartWordleR)
@@ -144,7 +131,6 @@ Partial Class frmStartWordle
         Controls.Add(btnStartGame)
         Controls.Add(txtNameInput)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        Margin = New Padding(6)
         Name = "frmStartWordle"
         Text = "Start Wordle"
         CType(picStartWordleE, ComponentModel.ISupportInitialize).EndInit()

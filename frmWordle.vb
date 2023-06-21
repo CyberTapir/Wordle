@@ -9,7 +9,7 @@ Public Class frmWordle
     ''' <summary>
     '''  Set Variables needed on this form
     ''' </summary>
-    Dim word As String = "ERROR"
+    Dim word As String = "DEEDS"
     Dim wordArray(21113) As String
     Dim playerGuess(5) As String
     Dim btnArray(26) As Button
@@ -37,7 +37,7 @@ Public Class frmWordle
         ''' Import words to array subroutine call
         importWords()
         ''' Choose a word
-        word = wordArray((Rnd() * 21112 + 1))
+        'word = wordArray((Rnd() * 21112 + 1))
     End Sub
     ''' <summary>
     ''' The importWords subrotine opens the wordlist, reads them into the variable Temp, 
@@ -59,18 +59,18 @@ Public Class frmWordle
     Private Sub setup()
         ''' Empty picture boxes
         For i = 1 To 30
-            pictureArray(i) = Nothing
+            pictureArray(i).ImageLocation = Nothing
         Next i
         ''' Empty button background colour
         For i = 1 To 26
-            btnArray(i) = Nothing
+            btnArray(i).BackColor = Nothing
         Next i
         ''' Empty player guess
         For i = 0 To 4
             playerGuess(i) = ""
         Next i
         ''' Reset variables
-        guessNum = 0
+        guessNum = 1
         guessStringNum = 0
         lblScore.Text = "Current Score: " & guessNum
         If bestScore < 7 Then
@@ -148,6 +148,11 @@ Public Class frmWordle
     Private Sub btnEnter_Click_1(sender As Object, e As EventArgs) Handles btnEnter.Click
         scoreGuess()
     End Sub
+    ''' <summary>
+    ''' Binary Search to verify the word is part of the wordlist
+    ''' </summary>
+    ''' <param name="word"></param>
+    ''' <returns></returns>
     Private Function findWord(word As String) As Boolean
         Dim first As Integer = 0
         Dim last As Integer = 21112
@@ -174,57 +179,108 @@ Public Class frmWordle
         Return returnVal
     End Function
     ''' <summary>
-    ''' ScureGuess is responsible for finding the word, and calling the updateDisplay subroutine to 
-    ''' update the display with the correct colours
+    ''' Score the user's guess and display it
     ''' </summary>
-    '
-    Private Sub scoreGuess()
+
+    Private Sub ScoreGuess()
         If guessStringNum = 5 Then
-            ''' If the word is found in the wordlist via binary search
-            If findWord(playerGuess(0) & playerGuess(1) & playerGuess(2) & playerGuess(3) & playerGuess(4)) Then
-                Dim correctCount As Integer
-                For i = 0 To 4
-                    ''' Check for if the letter is correct
+            Dim guessWord As String = String.Concat(playerGuess)
+            If findWord(guessWord) Then
+                Dim correctCount As Integer = 0
+                Dim greenIndices As New List(Of Integer)()
+                Dim greyIndices As New List(Of Integer)()
+
+                For i As Integer = 0 To 4
                     If playerGuess(i) = word(i) Then
-                        ''' Correct Letter in Correct Place
+                        ' Correct letter in the correct place (green color)
                         updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 3, True)
-                        If correctCount = 4 Then
-                            ''' If player has correctly guessed all letters end the game
-                            gameOver(guessNum)
+                        correctCount += 1
+                        greenIndices.Add(i)
+                    ElseIf word.Contains(playerGuess(i)) Then
+                        Dim guessOccurrences As Integer = CountOccurrences(guessWord, playerGuess(i))
+                        Dim wordOccurrences As Integer = CountOccurrences(word, playerGuess(i))
+
+                        If guessOccurrences > 1 AndAlso wordOccurrences = 1 AndAlso guessWord.IndexOf(playerGuess(i)) <> i Then
+                            ' Dual letter not in the correct place (one yellow and one gray)
+                            Dim secondIndex As Integer = guessWord.IndexOf(playerGuess(i), i + 1)
+                            If secondIndex >= 0 Then
+                                ' The second letter is in the right spot, so it turns green and the first letter turns grey
+                                If greenIndices.Contains(secondIndex) Then
+                                    ' If the second letter is already marked as green, the first letter becomes grey
+                                    updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
+                                    greyIndices.Add(i)
+                                Else
+                                    ' The second letter turns green and the first letter turns grey
+                                    updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
+                                    updateDisplay(guessNum, secondIndex, sendingLetter(playerGuess(secondIndex)), 3, True)
+                                    greenIndices.Add(secondIndex)
+                                    greyIndices.Add(i)
+                                End If
+                            Else
+                                ' The second letter is not adjacent and not in the right spot, so the first letter turns grey
+                                updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
+                                greyIndices.Add(i)
+                            End If
                         Else
-                            correctCount = correctCount + 1
+                            ' Letter is in the word but not in the correct place (yellow color)
+                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
                         End If
-                        ''' If letter is not correct then
-                    ElseIf playerGuess(i) <> word(i) Then
-                        ''' Player has not guessed the correct letter, but the letter is in the word
-                        If playerGuess(i) = word(0) And i <> 0 Then
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        ElseIf playerGuess(i) = word(1) And i <> 1 Then
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        ElseIf playerGuess(i) = word(2) And i <> 2 Then
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        ElseIf playerGuess(i) = word(3) And i <> 3 Then
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        ElseIf playerGuess(i) = word(4) And i <> 4 Then
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        Else
-                            ''' Player has guessed a letter not in the word
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
-                        End If
+                    Else
+                        ' Letter is not in the word (grey color)
+                        updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
+                        greyIndices.Add(i)
                     End If
-                    playerGuess(i) = ""
                 Next i
-                If guessNum = 7 Then
-                    ''' Player ran out of guesses, call gameover
-                    gameOver(7)
+
+                If correctCount = 5 Then
+                    ' If player has correctly guessed all letters, end the game
+                    gameOver(guessNum)
                 Else
-                    guessNum = guessNum + 1
+                    IncrementGuessCount()
                 End If
-                guessStringNum = 0
-                lblScore.Text = "Current Score: " & guessNum
+            Else
+                MsgBox("Unfortunately, " & guessWord & " is not a word. Try a different one.")
             End If
         End If
     End Sub
+
+
+
+    Private Function GetIndices(ByVal word As String, ByVal letter As Char) As List(Of Integer)
+        Dim indices As New List(Of Integer)
+        For i As Integer = 0 To word.Length - 1
+            If word(i) = letter Then
+                indices.Add(i)
+            End If
+        Next
+        Return indices
+    End Function
+
+    ''' <summary>
+    ''' Count occurences of a particular character in a word
+    ''' </summary>
+    ''' <param name="str">String input, the word that is being validated</param>
+    ''' <param name="ch">The character in question being looked for</param>
+    ''' <returns></returns>
+    Private Function CountOccurrences(str As String, ch As Char) As Integer
+        Dim count As Integer = 0
+        For Each c As Char In str
+            If c = ch Then
+                count += 1
+            End If
+        Next
+        Return count
+    End Function
+    Private Sub IncrementGuessCount()
+        guessNum += 1
+        If guessNum = 7 Then
+            ' Player ran out of guesses, call GameOver
+            gameOver(7)
+        End If
+        guessStringNum = 0
+        lblScore.Text = "Current Score: " & guessNum
+    End Sub
+
     ''' <summary>
     ''' The function sendingLetter adds btn before a capital letter passed in
     ''' </summary>
@@ -232,34 +288,6 @@ Public Class frmWordle
     ''' <returns>btn + letter, eg btnX</returns>
     Private Function sendingLetter(letter As Char) As String
         Return "btn" & letter
-    End Function
-    ''' <summary>
-    ''' Checks letter against 
-    ''' </summary>
-    ''' <param name="word"></param>
-    ''' <param name="chosenLetter"></param>
-    ''' <param name="letterPos"></param>
-    ''' <returns></returns>
-    Private Function letterColour(word, chosenLetter, letterPos) As Integer
-        Dim colour As Integer = 0
-        If word(letterPos) = chosenLetter Then
-            colour = 3
-        ElseIf chosenLetter <> word(letterPos) Then
-            If chosenLetter = word(letterPos) And letterPos <> 0 Then
-                colour = 2
-            ElseIf chosenLetter = word(1) And letterPos <> 1 Then
-                colour = 2
-            ElseIf chosenLetter = word(2) And letterPos <> 2 Then
-                colour = 2
-            ElseIf chosenLetter = word(3) And letterPos <> 3 Then
-                colour = 2
-            ElseIf chosenLetter = word(4) And letterPos <> 4 Then
-                colour = 2
-            Else
-                colour = 1
-            End If
-        End If
-        Return colour
     End Function
     ''' <summary>
     ''' Updates the display with the last letter pressed
@@ -414,11 +442,27 @@ Public Class frmWordle
     ''' Delete one character at a time, when the backspace or delete buttons on the keyboard or form are pressed.
     ''' </summary>
     Private Sub backspace()
-        pictureArray(5 * (guessNum - 1) + guessStringNum).ImageLocation = Nothing
         If guessStringNum > 0 Then
+            pictureArray(5 * (guessNum - 1) + guessStringNum).ImageLocation = Nothing
             guessStringNum = guessStringNum - 1
         End If
     End Sub
+    ''' <summary>
+    ''' Test to see if the word has dual letters
+    ''' </summary>
+    ''' <param name="word"> word that is passed in</param>
+    ''' <returns></returns>
+    Private Function hasDualLetters(word As String) As Boolean
+        Dim flag As Boolean
+        For i = 0 To 4 And flag = False
+            For j = 0 To 4 And flag = False
+                If word(i) = word(j) Then
+                    flag = True
+                End If
+            Next j
+        Next i
+        Return flag
+    End Function
     ''' <summary>
     ''' When the game ends either by player winning or losing, do respective event
     ''' </summary>
@@ -438,8 +482,8 @@ Public Class frmWordle
             MsgBox("Congratulations " & playerName & ", You guessed the word in " & guesses & " guesses!")
         End If
         ''' Restart the game from frmStartWordle
+        setup()
         frmStartWordle.Show()
         Me.Hide()
-        setup()
     End Sub
 End Class

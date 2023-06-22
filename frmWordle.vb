@@ -37,7 +37,7 @@ Public Class frmWordle
         ''' Import words to array subroutine call
         importWords()
         ''' Choose a word
-        'word = wordArray((Rnd() * 21112 + 1))
+        word = wordArray((Rnd() * 21112 + 1))
     End Sub
     ''' <summary>
     ''' The importWords subrotine opens the wordlist, reads them into the variable Temp, 
@@ -181,54 +181,29 @@ Public Class frmWordle
     ''' <summary>
     ''' Score the user's guess and display it
     ''' </summary>
-
+    ' First letter is in the right spot and turns green
     Private Sub ScoreGuess()
         If guessStringNum = 5 Then
             Dim guessWord As String = String.Concat(playerGuess)
             If findWord(guessWord) Then
+                Dim targetWord As String = word
                 Dim correctCount As Integer = 0
-                Dim greenIndices As New List(Of Integer)()
-                Dim greyIndices As New List(Of Integer)()
+
+                Dim output As String = Compare(guessWord, targetWord)
 
                 For i As Integer = 0 To 4
-                    If playerGuess(i) = word(i) Then
-                        ' Correct letter in the correct place (green color)
-                        updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 3, True)
-                        correctCount += 1
-                        greenIndices.Add(i)
-                    ElseIf word.Contains(playerGuess(i)) Then
-                        Dim guessOccurrences As Integer = CountOccurrences(guessWord, playerGuess(i))
-                        Dim wordOccurrences As Integer = CountOccurrences(word, playerGuess(i))
+                    Dim letter As String = playerGuess(i)
 
-                        If guessOccurrences > 1 AndAlso wordOccurrences = 1 AndAlso guessWord.IndexOf(playerGuess(i)) <> i Then
-                            ' Dual letter not in the correct place (one yellow and one gray)
-                            Dim secondIndex As Integer = guessWord.IndexOf(playerGuess(i), i + 1)
-                            If secondIndex >= 0 Then
-                                ' The second letter is in the right spot, so it turns green and the first letter turns grey
-                                If greenIndices.Contains(secondIndex) Then
-                                    ' If the second letter is already marked as green, the first letter becomes grey
-                                    updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
-                                    greyIndices.Add(i)
-                                Else
-                                    ' The second letter turns green and the first letter turns grey
-                                    updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
-                                    updateDisplay(guessNum, secondIndex, sendingLetter(playerGuess(secondIndex)), 3, True)
-                                    greenIndices.Add(secondIndex)
-                                    greyIndices.Add(i)
-                                End If
-                            Else
-                                ' The second letter is not adjacent and not in the right spot, so the first letter turns grey
-                                updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
-                                greyIndices.Add(i)
-                            End If
-                        Else
-                            ' Letter is in the word but not in the correct place (yellow color)
-                            updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 2, True)
-                        End If
+                    If output.Substring(i, 1) = "X" Then
+                        ' Correct letter in the correct place (green color)
+                        updateDisplay(guessNum, i, sendingLetter(letter), 3, True)
+                        correctCount += 1
+                    ElseIf output.Substring(i, 1) = "O" Then
+                        ' Letter in the word but in the wrong spot (yellow color)
+                        updateDisplay(guessNum, i, sendingLetter(letter), 2, True)
                     Else
                         ' Letter is not in the word (grey color)
-                        updateDisplay(guessNum, i, sendingLetter(playerGuess(i)), 1, True)
-                        greyIndices.Add(i)
+                        updateDisplay(guessNum, i, sendingLetter(letter), 1, True)
                     End If
                 Next i
 
@@ -244,17 +219,32 @@ Public Class frmWordle
         End If
     End Sub
 
+    Function Compare(Guess As String, Target As String) As String
+        Dim output As String = "-----"
 
-
-    Private Function GetIndices(ByVal word As String, ByVal letter As Char) As List(Of Integer)
-        Dim indices As New List(Of Integer)
-        For i As Integer = 0 To word.Length - 1
-            If word(i) = letter Then
-                indices.Add(i)
+        ' Match all of the Exact Match Characters first
+        For i As Integer = 1 To 5
+            If Guess.Substring(i - 1, 1) = Target.Substring(i - 1, 1) Then
+                output = output.Remove(i - 1, 1).Insert(i - 1, "X")
+                Target = Target.Remove(i - 1, 1).Insert(i - 1, "-")
             End If
-        Next
-        Return indices
+        Next i
+
+        ' Next Match Characters in the word but in the wrong spot
+        For i As Integer = 1 To 5
+            For j As Integer = 1 To 5
+                If (Guess.Substring(j - 1, 1) = Target.Substring(i - 1, 1)) And output.Substring(j - 1, 1) = "-" Then
+                    output = output.Remove(j - 1, 1).Insert(j - 1, "O")
+                    Target = Target.Remove(i - 1, 1).Insert(i - 1, "-")
+                End If
+            Next j
+        Next i
+
+        Compare = output
     End Function
+
+
+
 
     ''' <summary>
     ''' Count occurences of a particular character in a word

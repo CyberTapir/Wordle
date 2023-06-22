@@ -472,7 +472,7 @@ Partial Class frmWordle
         btnQ.Margin = New Padding(6)
         btnQ.Name = "btnQ"
         btnQ.Size = New Size(63, 49)
-        btnQ.TabIndex = 32
+        btnQ.TabIndex = 1
         btnQ.Text = "Q"
         btnQ.UseVisualStyleBackColor = True
         ' 
@@ -482,7 +482,7 @@ Partial Class frmWordle
         btnM.Margin = New Padding(6)
         btnM.Name = "btnM"
         btnM.Size = New Size(63, 49)
-        btnM.TabIndex = 33
+        btnM.TabIndex = 26
         btnM.Text = "M"
         btnM.UseVisualStyleBackColor = True
         ' 
@@ -492,7 +492,7 @@ Partial Class frmWordle
         btnN.Margin = New Padding(6)
         btnN.Name = "btnN"
         btnN.Size = New Size(63, 49)
-        btnN.TabIndex = 34
+        btnN.TabIndex = 25
         btnN.Text = "N"
         btnN.UseVisualStyleBackColor = True
         ' 
@@ -502,7 +502,7 @@ Partial Class frmWordle
         btnB.Margin = New Padding(6)
         btnB.Name = "btnB"
         btnB.Size = New Size(63, 49)
-        btnB.TabIndex = 35
+        btnB.TabIndex = 24
         btnB.Text = "B"
         btnB.UseVisualStyleBackColor = True
         ' 
@@ -512,7 +512,7 @@ Partial Class frmWordle
         btnV.Margin = New Padding(6)
         btnV.Name = "btnV"
         btnV.Size = New Size(63, 49)
-        btnV.TabIndex = 36
+        btnV.TabIndex = 23
         btnV.Text = "V"
         btnV.UseVisualStyleBackColor = True
         ' 
@@ -522,7 +522,7 @@ Partial Class frmWordle
         btnC.Margin = New Padding(6)
         btnC.Name = "btnC"
         btnC.Size = New Size(63, 49)
-        btnC.TabIndex = 37
+        btnC.TabIndex = 22
         btnC.Text = "C"
         btnC.UseVisualStyleBackColor = True
         ' 
@@ -532,7 +532,7 @@ Partial Class frmWordle
         btnX.Margin = New Padding(6)
         btnX.Name = "btnX"
         btnX.Size = New Size(63, 49)
-        btnX.TabIndex = 38
+        btnX.TabIndex = 21
         btnX.Text = "X"
         btnX.UseVisualStyleBackColor = True
         ' 
@@ -542,7 +542,7 @@ Partial Class frmWordle
         btnZ.Margin = New Padding(6)
         btnZ.Name = "btnZ"
         btnZ.Size = New Size(63, 49)
-        btnZ.TabIndex = 39
+        btnZ.TabIndex = 20
         btnZ.Text = "Z"
         btnZ.UseVisualStyleBackColor = True
         ' 
@@ -552,7 +552,7 @@ Partial Class frmWordle
         btnA.Margin = New Padding(6)
         btnA.Name = "btnA"
         btnA.Size = New Size(63, 49)
-        btnA.TabIndex = 40
+        btnA.TabIndex = 11
         btnA.Text = "A"
         btnA.UseVisualStyleBackColor = True
         ' 
@@ -562,7 +562,7 @@ Partial Class frmWordle
         btnS.Margin = New Padding(6)
         btnS.Name = "btnS"
         btnS.Size = New Size(63, 49)
-        btnS.TabIndex = 41
+        btnS.TabIndex = 12
         btnS.Text = "S"
         btnS.UseVisualStyleBackColor = True
         ' 
@@ -572,7 +572,7 @@ Partial Class frmWordle
         btnD.Margin = New Padding(6)
         btnD.Name = "btnD"
         btnD.Size = New Size(63, 49)
-        btnD.TabIndex = 42
+        btnD.TabIndex = 13
         btnD.Text = "D"
         btnD.UseVisualStyleBackColor = True
         ' 
@@ -582,7 +582,7 @@ Partial Class frmWordle
         btnF.Margin = New Padding(6)
         btnF.Name = "btnF"
         btnF.Size = New Size(63, 49)
-        btnF.TabIndex = 43
+        btnF.TabIndex = 14
         btnF.Text = "F"
         btnF.UseVisualStyleBackColor = True
         ' 
@@ -592,7 +592,7 @@ Partial Class frmWordle
         btnG.Margin = New Padding(6)
         btnG.Name = "btnG"
         btnG.Size = New Size(63, 49)
-        btnG.TabIndex = 44
+        btnG.TabIndex = 15
         btnG.Text = "G"
         btnG.UseVisualStyleBackColor = True
         ' 
@@ -602,7 +602,7 @@ Partial Class frmWordle
         btnH.Margin = New Padding(6)
         btnH.Name = "btnH"
         btnH.Size = New Size(63, 49)
-        btnH.TabIndex = 45
+        btnH.TabIndex = 16
         btnH.Text = "H"
         btnH.UseVisualStyleBackColor = True
         ' 
@@ -612,7 +612,7 @@ Partial Class frmWordle
         btnJ.Margin = New Padding(6)
         btnJ.Name = "btnJ"
         btnJ.Size = New Size(63, 49)
-        btnJ.TabIndex = 46
+        btnJ.TabIndex = 17
         btnJ.Text = "J"
         btnJ.UseVisualStyleBackColor = True
         ' 
@@ -622,7 +622,7 @@ Partial Class frmWordle
         btnK.Margin = New Padding(6)
         btnK.Name = "btnK"
         btnK.Size = New Size(63, 49)
-        btnK.TabIndex = 47
+        btnK.TabIndex = 18
         btnK.Text = "K"
         btnK.UseVisualStyleBackColor = True
         ' 
@@ -632,7 +632,7 @@ Partial Class frmWordle
         btnL.Margin = New Padding(6)
         btnL.Name = "btnL"
         btnL.Size = New Size(63, 49)
-        btnL.TabIndex = 48
+        btnL.TabIndex = 19
         btnL.Text = "L"
         btnL.UseVisualStyleBackColor = True
         ' 
@@ -642,7 +642,7 @@ Partial Class frmWordle
         btnP.Margin = New Padding(6)
         btnP.Name = "btnP"
         btnP.Size = New Size(63, 49)
-        btnP.TabIndex = 49
+        btnP.TabIndex = 10
         btnP.Text = "P"
         btnP.UseVisualStyleBackColor = True
         ' 
@@ -652,7 +652,7 @@ Partial Class frmWordle
         btnO.Margin = New Padding(6)
         btnO.Name = "btnO"
         btnO.Size = New Size(63, 49)
-        btnO.TabIndex = 50
+        btnO.TabIndex = 9
         btnO.Text = "O"
         btnO.UseVisualStyleBackColor = True
         ' 
@@ -662,7 +662,7 @@ Partial Class frmWordle
         btnI.Margin = New Padding(6)
         btnI.Name = "btnI"
         btnI.Size = New Size(63, 49)
-        btnI.TabIndex = 51
+        btnI.TabIndex = 8
         btnI.Text = "I"
         btnI.UseVisualStyleBackColor = True
         ' 
@@ -672,7 +672,7 @@ Partial Class frmWordle
         btnU.Margin = New Padding(6)
         btnU.Name = "btnU"
         btnU.Size = New Size(63, 49)
-        btnU.TabIndex = 52
+        btnU.TabIndex = 7
         btnU.Text = "U"
         btnU.UseVisualStyleBackColor = True
         ' 
@@ -682,7 +682,7 @@ Partial Class frmWordle
         btnY.Margin = New Padding(6)
         btnY.Name = "btnY"
         btnY.Size = New Size(63, 49)
-        btnY.TabIndex = 53
+        btnY.TabIndex = 6
         btnY.Text = "Y"
         btnY.UseVisualStyleBackColor = True
         ' 
@@ -692,7 +692,7 @@ Partial Class frmWordle
         btnT.Margin = New Padding(6)
         btnT.Name = "btnT"
         btnT.Size = New Size(63, 49)
-        btnT.TabIndex = 54
+        btnT.TabIndex = 5
         btnT.Text = "T"
         btnT.UseVisualStyleBackColor = True
         ' 
@@ -702,7 +702,7 @@ Partial Class frmWordle
         btnR.Margin = New Padding(6)
         btnR.Name = "btnR"
         btnR.Size = New Size(63, 49)
-        btnR.TabIndex = 55
+        btnR.TabIndex = 4
         btnR.Text = "R"
         btnR.UseVisualStyleBackColor = True
         ' 
@@ -712,7 +712,7 @@ Partial Class frmWordle
         btnE.Margin = New Padding(6)
         btnE.Name = "btnE"
         btnE.Size = New Size(63, 49)
-        btnE.TabIndex = 56
+        btnE.TabIndex = 3
         btnE.Text = "E"
         btnE.UseVisualStyleBackColor = True
         ' 
@@ -722,7 +722,7 @@ Partial Class frmWordle
         btnW.Margin = New Padding(6)
         btnW.Name = "btnW"
         btnW.Size = New Size(63, 49)
-        btnW.TabIndex = 57
+        btnW.TabIndex = 2
         btnW.Text = "W"
         btnW.UseVisualStyleBackColor = True
         ' 
@@ -732,7 +732,7 @@ Partial Class frmWordle
         btnBackspace.Margin = New Padding(6)
         btnBackspace.Name = "btnBackspace"
         btnBackspace.Size = New Size(139, 49)
-        btnBackspace.TabIndex = 58
+        btnBackspace.TabIndex = 28
         btnBackspace.Text = "Backspace"
         btnBackspace.UseVisualStyleBackColor = True
         ' 
@@ -742,7 +742,7 @@ Partial Class frmWordle
         btnEnter.Margin = New Padding(6)
         btnEnter.Name = "btnEnter"
         btnEnter.Size = New Size(139, 49)
-        btnEnter.TabIndex = 59
+        btnEnter.TabIndex = 27
         btnEnter.Text = "Enter"
         btnEnter.UseVisualStyleBackColor = True
         ' 

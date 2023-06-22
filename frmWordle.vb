@@ -188,12 +188,9 @@ Public Class frmWordle
             If findWord(guessWord) Then
                 Dim targetWord As String = word
                 Dim correctCount As Integer = 0
-
                 Dim output As String = Compare(guessWord, targetWord)
-
                 For i As Integer = 0 To 4
                     Dim letter As String = playerGuess(i)
-
                     If output.Substring(i, 1) = "X" Then
                         ' Correct letter in the correct place (green color)
                         updateDisplay(guessNum, i, sendingLetter(letter), 3, True)
@@ -206,7 +203,6 @@ Public Class frmWordle
                         updateDisplay(guessNum, i, sendingLetter(letter), 1, True)
                     End If
                 Next i
-
                 If correctCount = 5 Then
                     ' If player has correctly guessed all letters, end the game
                     gameOver(guessNum)
@@ -221,7 +217,6 @@ Public Class frmWordle
 
     Function Compare(Guess As String, Target As String) As String
         Dim output As String = "-----"
-
         ' Match all of the Exact Match Characters first
         For i As Integer = 1 To 5
             If Guess.Substring(i - 1, 1) = Target.Substring(i - 1, 1) Then
@@ -229,7 +224,6 @@ Public Class frmWordle
                 Target = Target.Remove(i - 1, 1).Insert(i - 1, "-")
             End If
         Next i
-
         ' Next Match Characters in the word but in the wrong spot
         For i As Integer = 1 To 5
             For j As Integer = 1 To 5
@@ -239,27 +233,7 @@ Public Class frmWordle
                 End If
             Next j
         Next i
-
         Compare = output
-    End Function
-
-
-
-
-    ''' <summary>
-    ''' Count occurences of a particular character in a word
-    ''' </summary>
-    ''' <param name="str">String input, the word that is being validated</param>
-    ''' <param name="ch">The character in question being looked for</param>
-    ''' <returns></returns>
-    Private Function CountOccurrences(str As String, ch As Char) As Integer
-        Dim count As Integer = 0
-        For Each c As Char In str
-            If c = ch Then
-                count += 1
-            End If
-        Next
-        Return count
     End Function
     Private Sub IncrementGuessCount()
         guessNum += 1

@@ -32,15 +32,15 @@ Public Class frmWordle
         lblName.Text = "Name: " & playerName
         lblScore.Text = "Current Score: " & guessNum
         lblBestScore.Text = "Best Score Today: Not Set"
-        ''' Initialise control array subroutine call
+        ''' Initialize control array subroutine call
         initialiseControlArray()
         ''' Import words to array subroutine call
         importWords()
         ''' Choose a word
-        word = wordArray((Rnd() * 21112 + 1))
+        'word = wordArray((Rnd() * 21112 + 1))
     End Sub
     ''' <summary>
-    ''' The importWords subrotine opens the wordlist, reads them into the variable Temp, 
+    ''' The importWords subroutine opens the wordlist, reads them into the variable Temp, 
     ''' and stores them in the array wordArray
     ''' </summary>
     Private Sub importWords()

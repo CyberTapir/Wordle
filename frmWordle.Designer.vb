@@ -758,7 +758,6 @@ Partial Class frmWordle
         ' 
         ' frmWordle
         ' 
-        AcceptButton = btnEnter
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1238, 1461)

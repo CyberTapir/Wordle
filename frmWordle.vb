@@ -37,7 +37,7 @@ Public Class frmWordle
         ''' Import words to array subroutine call
         importWords()
         ''' Choose a word
-        'word = wordArray((Rnd() * 21112 + 1))
+        word = wordArray((Rnd() * 21112 + 1))
     End Sub
     ''' <summary>
     ''' The importWords subroutine opens the wordlist, reads them into the variable Temp, 

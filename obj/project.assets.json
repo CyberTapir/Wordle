@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\callumbennett\\Source\\Repos\\CyberTapir\\Bennett Callum Stage 2\\Wordle\\Wordle.vbproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Documents\\GitHub\\Wordle\\Wordle.vbproj",
       "projectName": "Wordle",
-      "projectPath": "C:\\Users\\callumbennett\\Source\\Repos\\CyberTapir\\Bennett Callum Stage 2\\Wordle\\Wordle.vbproj",
+      "projectPath": "\\\\Mac\\Home\\Documents\\GitHub\\Wordle\\Wordle.vbproj",
       "packagesPath": "C:\\Users\\callumbennett\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\callumbennett\\Source\\Repos\\CyberTapir\\Bennett Callum Stage 2\\Wordle\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Documents\\GitHub\\Wordle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\callumbennett\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.17763.28, 10.0.17763.28]"
+            "version": "[10.0.17763.31, 10.0.17763.31]"
           }
         ],
         "frameworkReferences": {
@@ -73,7 +78,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

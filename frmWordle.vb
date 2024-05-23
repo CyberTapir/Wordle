@@ -189,7 +189,7 @@ Public Class frmWordle
                 Dim targetWord As String = word
                 Dim correctCount As Integer = 0
                 Dim output As String = Compare(guessWord, targetWord)
-                For i As Integer = 0 To 4x Step 1
+                For i As Integer = 0 To 4 Step 1
                     Dim letter As String = playerGuess(i)
                     If output.Substring(i, 1) = "X" Then
                         ' Correct letter in the correct place (green color)

@@ -44,3 +44,26 @@ C:\Users\callumbennett\Source\Repos\CyberTapir\Bennett Callum Stage 2\Wordle\obj
 C:\Users\callumbennett\Source\Repos\CyberTapir\Bennett Callum Stage 2\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.pdb
 C:\Users\callumbennett\Source\Repos\CyberTapir\Bennett Callum Stage 2\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.genruntimeconfig.cache
 C:\Users\callumbennett\Source\Repos\CyberTapir\Bennett Callum Stage 2\Wordle\obj\Debug\net6.0-windows10.0.17763.0\ref\Wordle.dll
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.dll
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\refint\Wordle.dll
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.pdb
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Wordle.exe
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\bin\Debug\net6.0-windows10.0.17763.0\assets\wordlist.txt
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Wordle.deps.json
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Wordle.runtimeconfig.json
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Wordle.dll
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Wordle.pdb
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\Microsoft.Windows.SDK.NET.dll
+\\Mac\Home\Documents\GitHub\Wordle\bin\Debug\net6.0-windows10.0.17763.0\WinRT.Runtime.dll
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.frmStartWordle.resources
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.frmWordle.resources
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.Resources.resources
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.vbproj.GenerateResource.cache
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.AssemblyInfo.vb
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.vbproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.sourcelink.json
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.vbproj.Up2Date
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\Wordle.genruntimeconfig.cache
+\\Mac\Home\Documents\GitHub\Wordle\obj\Debug\net6.0-windows10.0.17763.0\ref\Wordle.dll

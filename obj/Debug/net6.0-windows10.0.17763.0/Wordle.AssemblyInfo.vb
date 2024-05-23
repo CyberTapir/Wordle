@@ -17,7 +17,7 @@ Imports System.Reflection
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright 2023 CyberTapir Media Group"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3caf5f83bdbb9aa4ba153939eeb14c43a95d7eab"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Wordle, CyberTapir"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Wordle"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
